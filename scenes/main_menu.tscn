@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://eleimwoxt82l"]
+
+[ext_resource type="Script" uid="uid://drkhx8i2irja0" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://ypahfs73bech" path="res://images/chess.png" id="2_ekxnf"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="MiscContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="GameIcon" type="TextureRect" parent="PanelContainer/CenterContainer/HBoxContainer/MiscContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_ekxnf")
+
+[node name="MenuButtons" type="VBoxContainer" parent="PanelContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CreateLobbyButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Create Lobby"
+
+[node name="EnterLobbyButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Enter Lobby"
+
+[node name="ExitButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit"
+
+[node name="InputsContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CurrentName" type="Label" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "bob"
+
+[node name="NameEdit" type="LineEdit" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ChangeNameButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Change name"
+
+[node name="Button" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
+layout_mode = 2
+text = "test"
+
+[connection signal="button_down" from="PanelContainer/CenterContainer/HBoxContainer/InputsContainer/Button" to="." method="_on_button_button_down"]
