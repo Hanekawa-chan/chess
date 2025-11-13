@@ -26,3 +26,11 @@ func make_copy():
 	copy_tile.movable_places = movable_places
 	copy_tile.place = Vector2i(place)
 	return copy_tile
+
+func convert_movable_places(grid):
+	var new_movable_places = []
+	for p in movable_places:
+		for t in grid:
+			if t.place == p.place:
+				new_movable_places.append(t)
+	return new_movable_places
