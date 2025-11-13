@@ -15,3 +15,14 @@ var piece: Piece = null:
 var place: Vector2i
 @export
 var movable_places: Array
+
+
+func make_copy():
+	var copy_tile = ChessTileModel.new()
+	if piece != null:
+		var _piece = piece.make_copy()
+		_piece.tile_model = copy_tile
+		copy_tile.piece = _piece
+	copy_tile.movable_places = movable_places
+	copy_tile.place = Vector2i(place)
+	return copy_tile

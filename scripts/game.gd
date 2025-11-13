@@ -108,26 +108,25 @@ enum Tiles {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _board = get_initial_board()
-	var cells = pieces.get_used_cells()
-	for cell in cells:
-		var source = pieces.get_cell_atlas_coords(cell)
-		print("cell:", cell, " source:", source)
 	for cell in chess_grid.get_children():
 		cell.initialize()
 		for piece in _board:
 			if piece.place == cell.place:
 				cell.piece = piece
 				break
-	get_available_moves()
+	var fake_grid = copy_chess_grid(chess_grid.get_children())
+	get_available_moves(chess_grid.get_children())
 	
-func get_available_moves():
+func get_available_moves(grid: Array):
 	print("getting available moves")
-	var tiles = chess_grid.get_children()
-	for tile in tiles:
+	for tile in grid:
 		if tile.piece != null:
-			tile.movable_places = get_all_moves(tile.piece, tiles)
+			tile.movable_places = get_all_moves(tile.piece, grid)
+	var side = Side.White
+	var killers = get_king_killers(side, grid)
+	print(killers)
 
-func get_all_moves(piece: Piece, tiles: Array[Node]) -> Array:
+func get_all_moves(piece: Piece, tiles: Array) -> Array:
 	var movable_positions = []
 	match piece.figure:
 		Pieces.Rook:
@@ -382,7 +381,7 @@ func get_all_moves(piece: Piece, tiles: Array[Node]) -> Array:
 						movable_positions.append(second_front_tile)
 	return movable_positions
 
-func find_tile_by_position(tiles: Array[Node], _position: Vector2i) -> ChessTile:
+func find_tile_by_position(tiles: Array, _position: Vector2i):
 	for tile in tiles:
 		if tile.place == _position:
 			return tile
@@ -426,11 +425,15 @@ func get_initial_board():
 	return _board
 
 func copy_chess_grid(grid: Array):
-	# TODO make copying of chess grid
 	var new_grid = []
 	for tile in grid:
-		var copyTile = ChessTileModel.new()
-		new_grid.append(copyTile)
+		var copy_tile = tile.convert_to_model()
+		new_grid.append(copy_tile)
+	for tile in new_grid:
+		var mov_pos = tile.movable_places
+		tile.movable_places = []
+		for pos in mov_pos:
+			tile.movable_places.append(find_tile_by_position(new_grid, pos.place))
 	return new_grid
 
 func get_king_killers(side: Side, grid: Array):
@@ -439,9 +442,31 @@ func get_king_killers(side: Side, grid: Array):
 		enemy_side = Side.Black
 	var killers = []
 	for tile in grid:
-		if tile.piece != null && tile.piece.side == enemy_side:
+		if tile.piece != null && tile.piece.color == enemy_side:
 			for place in tile.movable_places:
-				if place.piece != null && place.piece.figure == Pieces.King && place.piece.side == side:
+				if place.piece != null && place.piece.figure == Pieces.King && place.piece.color == side:
 					killers.append(place)
 	return killers
+	
+func reduce_moves(grid: Array):
+	for tile in grid:
+		for place in tile.movable_places:
+			print(place)
+			var simulated_grid = simulate_move(tile, place, grid)
+			get_available_moves(simulated_grid)
+			
+func simulate_move(tile, place, grid):
+	var tile_to_move
+	var new_grid = []
+	for t in grid:
+		var new_tile = t.make_copy()
+		if new_tile.piece.place == tile.piece.place:
+			new_tile.piece = null
+		if new_tile.piece.place == place:
+			tile_to_move = new_tile
+		new_grid.append(new_tile)	
+	tile_to_move.piece = tile.piece.make_copy()
+	tile_to_move.piece.tile_model = tile_to_move
+	
+	return new_grid
 	

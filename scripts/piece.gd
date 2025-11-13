@@ -9,6 +9,7 @@ var color: Game.Side
 @export
 var moved: bool
 var tile: ChessTile
+var tile_model: ChessTileModel
 
 
 func _init(_place = Vector2i(0,0), _figure = Game.Pieces.Pawn, _color = Game.Side.White, _tile = null):
@@ -16,3 +17,11 @@ func _init(_place = Vector2i(0,0), _figure = Game.Pieces.Pawn, _color = Game.Sid
 	figure = _figure
 	color = _color
 	tile = _tile
+
+func make_copy():
+	var _piece = Piece.new()
+	_piece.place = Vector2i(place)
+	_piece.figure = figure
+	_piece.moved = moved
+	_piece.color = color
+	return _piece
