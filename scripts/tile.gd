@@ -54,7 +54,7 @@ func _on_button_up():
 						# PIECE MOVES
 						piece = active_piece
 						game.move_number += 1
-						game.get_available_moves(game.chess_grid.get_children())
+						game.new_round(game.chess_grid.get_children())
 		else:
 			game.active_piece = piece
 	else:
@@ -67,7 +67,7 @@ func _on_button_up():
 					# PIECE MOVES
 					piece = active_piece
 					game.move_number += 1
-					game.get_available_moves(game.chess_grid.get_children())
+					game.new_round(game.chess_grid.get_children())
 					
 func convert_to_model():
 	var copy_tile = ChessTileModel.new()
