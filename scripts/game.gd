@@ -201,7 +201,8 @@ func simulate_move(tile, place, grid):
 			new_tile.piece = null
 		if new_tile.piece != null && new_tile.piece.place == place.place:
 			tile_to_move = new_tile
-		new_grid.append(new_tile)	
+		new_grid.append(new_tile)
+	
 	tile_to_move.piece = tile.piece.make_copy()
 	tile_to_move.piece.tile_model = tile_to_move
 	
