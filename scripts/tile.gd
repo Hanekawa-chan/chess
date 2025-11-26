@@ -12,6 +12,7 @@ var piece: Piece = null:
 			if tile != null:
 				pieces.set_cell(tile.place, 0)
 				tile.piece = null
+				tile.movable_places = []
 				value.place = place
 				value.moved = true
 		piece = value
@@ -41,7 +42,7 @@ func initialize():
 
 func _on_button_up():
 	if piece != null:
-		print("clicked me! Pos:", place, " Fig:", Game.Pieces.keys()[piece.figure], " Color:", Game.Side.keys()[piece.color], " Available moves:", movable_places)
+		#print("clicked me! Pos:", place, " Fig:", Game.Pieces.keys()[piece.figure], " Color:", Game.Side.keys()[piece.color], " Available moves:", movable_places)
 		if game.active_piece != null:
 			if game.active_piece.color == piece.color:
 				game.active_piece = piece
@@ -52,19 +53,21 @@ func _on_button_up():
 				for pos in active_piece.tile.movable_places:
 					if pos.place == place:
 						# PIECE MOVES
+						#print("active", active_piece)
 						piece = active_piece
 						game.move_number += 1
 						game.new_round(game.chess_grid.get_children())
 		else:
 			game.active_piece = piece
 	else:
-		print("clicked me! Pos:", place, " Empty")
+		#print("clicked me! Pos:", place, " Empty")
 		var active_piece = game.active_piece
 		if active_piece != null:
 			game.active_piece = null
 			for pos in active_piece.tile.movable_places:
 				if pos.place == place:
 					# PIECE MOVES
+					#print("active", active_piece)
 					piece = active_piece
 					game.move_number += 1
 					game.new_round(game.chess_grid.get_children())

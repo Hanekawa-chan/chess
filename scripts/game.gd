@@ -110,12 +110,13 @@ enum Tiles {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var _board = get_initial_board()
+	var _board = get_test_initial_board()
 	for cell in chess_grid.get_children():
 		cell.initialize()
 		for piece in _board:
 			if piece.place == cell.place:
 				cell.piece = piece
+				piece.tile = cell
 				break
 	get_available_moves(chess_grid.get_children())
 
@@ -132,7 +133,6 @@ func loose(side):
 	print(Side.keys()[side], " player lost")
 
 func get_available_moves(grid: Array):
-	print("getting available moves")
 	for tile in grid:
 		if tile.piece != null:
 			tile.movable_places = get_all_moves(tile.piece, grid)
@@ -160,7 +160,7 @@ func realize_moves(grid: Array):
 		for t in chess_grid.get_children():
 			if tile.place == t.place:
 				if t.piece != null:
-					t.piece.movable_places = tile.convert_movable_places(chess_grid.get_children())
+					t.movable_places = tile.convert_movable_places(chess_grid.get_children())
 
 func get_king_killers(side: Side, grid: Array):
 	var enemy_side = Side.White
@@ -172,6 +172,7 @@ func get_king_killers(side: Side, grid: Array):
 			for place in tile.movable_places:
 				if place.piece != null && place.piece.figure == Pieces.King && place.piece.color == side:
 					killers.append(place)
+					#print("killer of my pingas ", place.place)
 	return killers
 	
 func reduce_moves(grid: Array, side):
@@ -179,35 +180,48 @@ func reduce_moves(grid: Array, side):
 	for tile in grid:
 		var not_movable_places = []
 		for place in tile.movable_places:
-			print(place)
 			var simulated_grid = simulate_move(tile, place, grid)
 			get_available_moves(simulated_grid)
+			print_grid(simulated_grid)
 			var killers = get_king_killers(side, simulated_grid)
 			if len(killers) > 0:
 				not_movable_places.append(place)
 		for place in not_movable_places:
 			tile.movable_places.erase(place)
-		if len(tile.movable_places) > 0:
+		if tile.piece != null && tile.piece.color == side && len(tile.movable_places) > 0:
 			movable_pieces += 1
 	return movable_pieces > 0
-			
+
+func print_grid(grid: Array):
+		#print("start")
+	for tile in grid:
+		if tile.piece != null:
+			var piece = tile.piece
+			var place = tile.place
+			#print("Pos:", place, " Fig:", Pieces.keys()[piece.figure], " Color:", Side.keys()[piece.color])
+# TODO somewhere movable_places are not clearing
 # simulate_move duplicates grid and deletes piece on the old tile and places it on the new tile on duplicated grid
 func simulate_move(tile, place, grid):
-	var tile_to_move
 	var new_grid = []
 	for t in grid:
 		var new_tile = t.make_copy()
 		if new_tile.piece != null && new_tile.piece.place == tile.piece.place:
 			new_tile.piece = null
-		if new_tile.piece != null && new_tile.piece.place == place.place:
-			tile_to_move = new_tile
+		if new_tile.place == place.place:
+			new_tile.piece = tile.piece.make_copy()
+			new_tile.piece.tile_model = new_tile
 		new_grid.append(new_tile)
-	
-	tile_to_move.piece = tile.piece.make_copy()
-	tile_to_move.piece.tile_model = tile_to_move
 	
 	return new_grid
 	
+func get_test_initial_board():
+	var _board = [
+		Piece.new(Vector2i(2,6), Pieces.King),
+		Piece.new(Vector2i(2,3), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(3,3), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(4,6), Pieces.Rook, Side.Black),
+	]
+	return _board
 
 func get_initial_board():
 	var _board = [
