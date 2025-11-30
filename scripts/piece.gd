@@ -11,6 +11,12 @@ var moved: bool
 var tile: ChessTile
 var tile_model: ChessTileModel
 
+func change_figure_on_grid(_figure: Game.Pieces):
+	print("change figure on grid")
+	figure = _figure
+	if tile != null:
+		print("tile != null")
+		tile.change_figure_tile()
 
 func _init(_place = Vector2i(0,0), _figure = Game.Pieces.Pawn, _color = Game.Side.White, _tile = null):
 	place = _place

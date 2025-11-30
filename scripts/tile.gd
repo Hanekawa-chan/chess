@@ -1,7 +1,7 @@
 class_name ChessTile extends Button
 
 @onready
-var game: Game = $"../../../../.."
+var game: Game = $"../../../../../../../../../.."
 @onready
 var pieces = %Pieces
 @export
@@ -24,6 +24,10 @@ var piece: Piece = null:
 			else:
 				new_tile = game.black_piece_tiles_array[piece.figure]
 		pieces.set_cell(place, 0, new_tile)
+		if value != null:
+			if value.figure == Game.Pieces.Pawn && ((place.y==0 && value.color == Game.Side.White) || (place.y==7 && value.color == Game.Side.Black)):
+				print("pawn can be changed to other figures")
+				game.pawn_to_transfigure = value
 
 @export
 var place: Vector2i
@@ -81,3 +85,12 @@ func convert_to_model():
 	copy_tile.movable_places = movable_places
 	copy_tile.place = Vector2i(place)
 	return copy_tile
+
+func change_figure_tile():
+	print("wtf")
+	var new_tile =  Vector2i(-1,-1)
+	if piece.color == Game.Side.White:
+		new_tile = game.white_piece_tiles_array[piece.figure]
+	else:
+		new_tile = game.black_piece_tiles_array[piece.figure]
+	pieces.set_cell(place, 0, new_tile)

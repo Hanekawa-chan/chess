@@ -1,5 +1,6 @@
 class_name Game extends Control
 
+@onready var choosable_pieces = %ChoosablePieces
 @onready var move_number_label = %MoveNumberLabel
 @onready var current_side_label = %CurrentSideLabel
 @onready var board = %Board
@@ -36,6 +37,7 @@ var active_piece: Piece = null:
 				old_tile = board.get_cell_atlas_coords(t.place)
 				board.set_cell(t.place, 0, Vector2i(old_tile.x, old_tile.y-2))
 		print("new active piece ", value, " old place ", old_place)
+var pawn_to_transfigure: Piece = null
 
 var white_piece_tiles_array = [
 	Vector2i(0,0),
@@ -119,6 +121,11 @@ func _ready():
 				piece.tile = cell
 				break
 	get_available_moves(chess_grid.get_children())
+	
+func pawn_to_figure(figure: Pieces):
+	if pawn_to_transfigure != null:
+		pawn_to_transfigure.change_figure_on_grid(figure)
+		pawn_to_transfigure = null
 
 func new_round(grid: Array):
 	var fake_grid = copy_chess_grid(grid)
@@ -216,10 +223,13 @@ func simulate_move(tile, place, grid):
 	
 func get_test_initial_board():
 	var _board = [
-		Piece.new(Vector2i(2,6), Pieces.King),
-		Piece.new(Vector2i(2,3), Pieces.Rook, Side.Black),
-		Piece.new(Vector2i(3,3), Pieces.Rook, Side.Black),
-		Piece.new(Vector2i(4,6), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(0,7), Pieces.King),
+		Piece.new(Vector2i(1,1), Pieces.Pawn),
+		Piece.new(Vector2i(1,6), Pieces.Queen),
+		Piece.new(Vector2i(1,3), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(1,2), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(4,7), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(5,6), Pieces.Pawn, Side.Black),
 	]
 	return _board
 
