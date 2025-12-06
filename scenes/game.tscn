@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://bv8trog1nw6qp"]
+[gd_scene load_steps=29 format=4 uid="uid://bv8trog1nw6qp"]
 
 [ext_resource type="Texture2D" uid="uid://cl55bw3rvlgli" path="res://images/tileset.png" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cw3ao23ynvpem" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://cnxwsbc3ugu3c" path="res://scripts/tile.gd" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://cio0ren5mxxpa" path="res://scripts/choosable_piece.gd" id="3_lbhrr"]
+[ext_resource type="LabelSettings" uid="uid://cw3drfn4oacpp" path="res://resources/white_label.tres" id="4_p57ef"]
+[ext_resource type="LabelSettings" uid="uid://c42jp88t0btft" path="res://resources/black_label.tres" id="5_u5sy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p57ef"]
 resource_name = "pawn"
@@ -25,12 +27,49 @@ resource_name = "pawn"
 atlas = ExtResource("1_uwrxv")
 region = Rect2(48, 16, 16, 16)
 
-[sub_resource type="SystemFont" id="SystemFont_lnu2h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtaks"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="LabelSettings" id="LabelSettings_lnu2h"]
-line_spacing = 0.0
-font = SubResource("SystemFont_lnu2h")
-font_size = 11
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvpfn"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dinhu"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvuet"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trtic"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(1, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir15t"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca42v"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rysoc"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssvqc"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_264po"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kice"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 resource_name = "main"
@@ -54,6 +93,26 @@ texture = ExtResource("1_uwrxv")
 
 [sub_resource type="TileSet" id="TileSet_lnu2h"]
 sources/0 = SubResource("TileSetAtlasSource_yqjtg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5newe"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37s47"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt5mj"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1j6l"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl11u"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(48, 16, 16, 16)
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -127,558 +186,951 @@ piece = 5
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/HBoxContainer/Center"]
-layout_mode = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="GridContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2.5, 2.5)
-theme_override_constants/h_separation = 4
+[node name="HBoxContainer" type="GridContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer"]
 texture_filter = 6
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
+[node name="First9" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_lnu2h")
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_vtaks")
+expand_mode = 2
 
-[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
+[node name="First" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 1
-text = "1"
-label_settings = SubResource("LabelSettings_lnu2h")
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kvpfn")
+expand_mode = 2
 
-[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-text = "2"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label3" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "3"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label4" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "4"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label5" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "5"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label6" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "6"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label7" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "7"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label8" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "8"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2"]
-texture_filter = 6
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 10
-
-[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-text = "a"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-text = "b"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label3" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "c"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label4" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "d"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label5" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "e"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label6" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "f"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label7" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "g"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="Label8" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "h"
-label_settings = SubResource("LabelSettings_lnu2h")
-
-[node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-
-[node name="ChessGrid" type="GridContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 128)
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 3
+text = "8"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First2" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_vtaks")
+expand_mode = 2
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "7"
+label_settings = ExtResource("5_u5sy4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First3" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kvpfn")
+expand_mode = 2
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "6"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First4" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_dinhu")
+expand_mode = 2
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "5"
+label_settings = ExtResource("5_u5sy4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First5" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kvuet")
+expand_mode = 2
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "4"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First6" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_trtic")
+expand_mode = 2
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "3"
+label_settings = ExtResource("5_u5sy4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First7" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ir15t")
+expand_mode = 2
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "2"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First8" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ca42v")
+expand_mode = 2
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "1"
+label_settings = ExtResource("5_u5sy4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+texture_filter = 6
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="First" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kvpfn")
+expand_mode = 5
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "a"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First2" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_rysoc")
+expand_mode = 5
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "b"
+label_settings = ExtResource("5_u5sy4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First3" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kvpfn")
+expand_mode = 5
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "c"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First4" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ssvqc")
+expand_mode = 5
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "d"
+label_settings = ExtResource("5_u5sy4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First5" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kvpfn")
+expand_mode = 5
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "e"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First6" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_264po")
+expand_mode = 5
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "f"
+label_settings = ExtResource("5_u5sy4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First7" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kvpfn")
+expand_mode = 5
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "g"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="First8" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_1kice")
+expand_mode = 5
+
+[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_right = -26.0
+offset_bottom = -6.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "h"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="AspectRatioContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChessGrid" type="GridContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 8
 
-[node name="00" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="00" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="01" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="01" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="02" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="02" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="03" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="03" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="04" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="04" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="05" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="05" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="06" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="06" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="07" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="07" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="10" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="10" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="11" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="11" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="12" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="12" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="13" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="13" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="14" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="14" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="15" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="15" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="16" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="16" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="17" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="17" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="20" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="20" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="21" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="21" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="22" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="22" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="23" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="23" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="24" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="24" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="25" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="25" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="26" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="26" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="27" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="27" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="30" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="30" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="31" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="31" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="32" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="32" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="33" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="33" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="34" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="34" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="35" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="35" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="36" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="36" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="37" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="37" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="40" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="40" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="41" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="41" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="42" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="42" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="43" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="43" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="44" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="44" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="45" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="45" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="46" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="46" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="47" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="47" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="50" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="50" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="51" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="51" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="52" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="52" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="53" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="53" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="54" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="54" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="55" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="55" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="56" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="56" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="57" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="57" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="60" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="60" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="61" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="61" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="62" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="62" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="63" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="63" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="64" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="64" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="65" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="65" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="66" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="66" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="67" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="67" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="70" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="70" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="71" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="71" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="72" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="72" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="73" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="73" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="74" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="74" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="75" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="75" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="76" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="76" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="77" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect/ChessGrid"]
+[node name="77" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
 
-[node name="Board" type="TileMapLayer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect"]
+[node name="Board" type="TileMapLayer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
 unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAABAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAABAAAAAAABAAAAAAABAAAAAAABAAEAAAAAAAAAAAABAAIAAAABAAAAAAABAAMAAAAAAAAAAAABAAQAAAABAAAAAAABAAUAAAAAAAAAAAABAAYAAAABAAAAAAABAAcAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAACAAIAAAAAAAAAAAACAAMAAAABAAAAAAACAAQAAAAAAAAAAAACAAUAAAABAAAAAAACAAYAAAAAAAAAAAACAAcAAAABAAAAAAADAAAAAAABAAAAAAADAAEAAAAAAAAAAAADAAIAAAABAAAAAAADAAMAAAAAAAAAAAADAAQAAAABAAAAAAADAAUAAAAAAAAAAAADAAYAAAABAAAAAAADAAcAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAABAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAABAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAABAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAABAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAABAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAABAAAAAAAFAAcAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAABAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAABAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAABAAAAAAAHAAAAAAABAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAABAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAABAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAABAAAAAAAHAAcAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_lnu2h")
 
-[node name="Pieces" type="TileMapLayer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer2/ReferenceRect"]
+[node name="Pieces" type="TileMapLayer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
 unique_name_in_owner = true
 tile_set = SubResource("TileSet_lnu2h")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_5newe")
+stretch_mode = 3
+
+[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_lnu2h")
+text = "0x"
+label_settings = ExtResource("4_p57ef")
 
-[node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_37s47")
+stretch_mode = 3
+
+[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 1
-text = "
-"
-label_settings = SubResource("LabelSettings_lnu2h")
+text = "0x"
+label_settings = ExtResource("4_p57ef")
 
-[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer3"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_bt5mj")
+stretch_mode = 3
+
+[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_lnu2h")
+text = "0x"
+label_settings = ExtResource("4_p57ef")
 
-[node name="Label3" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-label_settings = SubResource("LabelSettings_lnu2h")
 
-[node name="Label4" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer4"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-label_settings = SubResource("LabelSettings_lnu2h")
+texture = SubResource("AtlasTexture_e1j6l")
+stretch_mode = 3
 
-[node name="Label5" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer4"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-label_settings = SubResource("LabelSettings_lnu2h")
+size_flags_vertical = 1
+text = "0x"
+label_settings = ExtResource("4_p57ef")
 
-[node name="Label6" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-label_settings = SubResource("LabelSettings_lnu2h")
 
-[node name="Label7" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer6"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-label_settings = SubResource("LabelSettings_lnu2h")
+texture = SubResource("AtlasTexture_pl11u")
+stretch_mode = 3
 
-[node name="Label8" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/ReferenceRect/HBoxContainer/VBoxContainer3"]
+[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer6"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-label_settings = SubResource("LabelSettings_lnu2h")
+size_flags_vertical = 1
+text = "0x"
+label_settings = ExtResource("4_p57ef")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="RightSide" type="MarginContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
