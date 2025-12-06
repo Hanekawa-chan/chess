@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c42jp88t0btft"]
+
+[sub_resource type="SystemFont" id="SystemFont_ssnfk"]
+
+[resource]
+line_spacing = 0.0
+font = SubResource("SystemFont_ssnfk")
+font_color = Color(0, 0, 0, 1)
