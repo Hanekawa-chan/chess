@@ -1,14 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://bv8trog1nw6qp"]
+[gd_scene load_steps=13 format=4 uid="uid://bv8trog1nw6qp"]
 
 [ext_resource type="Texture2D" uid="uid://cl55bw3rvlgli" path="res://images/tileset.png" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cw3ao23ynvpem" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://cnxwsbc3ugu3c" path="res://scripts/tile.gd" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://cio0ren5mxxpa" path="res://scripts/choosable_piece.gd" id="3_lbhrr"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
-resource_name = "pawn"
-atlas = ExtResource("1_uwrxv")
-region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p57ef"]
 resource_name = "pawn"
@@ -95,14 +90,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Pawn" type="TextureButton" parent="CenterContainer/HBoxContainer/LeftSide/HBoxContainer/ChoosablePieces"]
-layout_mode = 2
-size_flags_vertical = 3
-texture_normal = SubResource("AtlasTexture_iywne")
-stretch_mode = 4
-script = ExtResource("3_lbhrr")
-piece = 1
 
 [node name="Bishop" type="TextureButton" parent="CenterContainer/HBoxContainer/LeftSide/HBoxContainer/ChoosablePieces"]
 layout_mode = 2
