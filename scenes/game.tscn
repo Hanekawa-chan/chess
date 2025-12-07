@@ -98,10 +98,6 @@ sources/0 = SubResource("TileSetAtlasSource_yqjtg")
 atlas = ExtResource("1_uwrxv")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_37s47"]
-atlas = ExtResource("1_uwrxv")
-region = Rect2(48, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bt5mj"]
 atlas = ExtResource("1_uwrxv")
 region = Rect2(0, 16, 16, 16)
@@ -109,6 +105,10 @@ region = Rect2(0, 16, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1j6l"]
 atlas = ExtResource("1_uwrxv")
 region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37s47"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pl11u"]
 atlas = ExtResource("1_uwrxv")
@@ -133,6 +133,7 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="LeftSide" type="MarginContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -205,6 +206,7 @@ columns = 3
 texture_filter = 6
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
 theme_override_constants/separation = 0
 
 [node name="First9" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
@@ -394,27 +396,28 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
 texture_filter = 6
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 0
 
 [node name="First" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_kvpfn")
-expand_mode = 5
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 6.5
-offset_right = -26.0
-offset_bottom = -6.5
+offset_right = -19.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -428,16 +431,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_rysoc")
-expand_mode = 5
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 6.5
-offset_right = -26.0
-offset_bottom = -6.5
+offset_right = -20.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -451,16 +454,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_kvpfn")
-expand_mode = 5
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 6.5
-offset_right = -26.0
-offset_bottom = -6.5
+offset_right = -21.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -474,16 +477,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_ssvqc")
-expand_mode = 5
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 6.5
-offset_right = -26.0
-offset_bottom = -6.5
+offset_right = -20.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -497,16 +500,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_kvpfn")
-expand_mode = 5
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 6.5
-offset_right = -26.0
-offset_bottom = -6.5
+offset_right = -20.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -520,16 +523,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_264po")
-expand_mode = 5
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First6"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 6.5
-offset_right = -26.0
-offset_bottom = -6.5
+offset_right = -23.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -543,16 +546,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_kvpfn")
-expand_mode = 5
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First7"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 6.5
-offset_right = -26.0
-offset_bottom = -6.5
+offset_right = -21.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -566,27 +569,30 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_1kice")
-expand_mode = 5
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First8"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 6.5
-offset_right = -26.0
-offset_bottom = -6.5
+offset_right = -19.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 text = "h"
-label_settings = ExtResource("4_p57ef")
+label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer" type="AspectRatioContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+stretch_mode = 0
+alignment_horizontal = 0
+alignment_vertical = 0
 
 [node name="ChessGrid" type="GridContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
 unique_name_in_owner = true
@@ -1055,6 +1061,7 @@ tile_set = SubResource("TileSet_lnu2h")
 [node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
 theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
@@ -1062,25 +1069,14 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_5newe")
+expand_mode = 3
 stretch_mode = 3
 
 [node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 1
-text = "0x"
-label_settings = ExtResource("4_p57ef")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_37s47")
-stretch_mode = 3
-
-[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
-layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0x"
 label_settings = ExtResource("4_p57ef")
@@ -1090,11 +1086,14 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer3"]
 layout_mode = 2
+size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_bt5mj")
+expand_mode = 3
 stretch_mode = 3
 
 [node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer3"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0x"
 label_settings = ExtResource("4_p57ef")
@@ -1104,11 +1103,33 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer4"]
 layout_mode = 2
+size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_e1j6l")
+expand_mode = 3
 stretch_mode = 3
 
 [node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer4"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0x"
+label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_37s47")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0x"
 label_settings = ExtResource("4_p57ef")
@@ -1118,19 +1139,24 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer6"]
 layout_mode = 2
+size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_pl11u")
+expand_mode = 3
 stretch_mode = 3
 
 [node name="Label0" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/HBoxContainer6"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0x"
 label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.4
 
 [node name="RightSide" type="MarginContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2

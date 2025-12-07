@@ -110,8 +110,15 @@ enum Tiles {
 	ActiveBlack
 }
 
-# Called when the node enters the scene tree for the first time.
+func _set_scale():
+	var _scale = chess_grid.size.x/8/16
+	print("size ", chess_grid.size, "scale ", _scale)
+	board.apply_scale(Vector2(_scale/board.scale.x, _scale/board.scale.y))
+	pieces.apply_scale(Vector2(_scale/pieces.scale.x, _scale/pieces.scale.y))
+	
+
 func _ready():
+	chess_grid.resized.connect(_set_scale)
 	var _board = get_test_initial_board()
 	for cell in chess_grid.get_children():
 		cell.initialize()
@@ -189,7 +196,7 @@ func reduce_moves(grid: Array, side):
 		for place in tile.movable_places:
 			var simulated_grid = simulate_move(tile, place, grid)
 			get_available_moves(simulated_grid)
-			print_grid(simulated_grid)
+			#print_grid(simulated_grid)
 			var killers = get_king_killers(side, simulated_grid)
 			if len(killers) > 0:
 				not_movable_places.append(place)
@@ -205,8 +212,8 @@ func print_grid(grid: Array):
 		if tile.piece != null:
 			var piece = tile.piece
 			var place = tile.place
-			#print("Pos:", place, " Fig:", Pieces.keys()[piece.figure], " Color:", Side.keys()[piece.color])
-# TODO somewhere movable_places are not clearing
+			print("Pos:", place, " Fig:", Pieces.keys()[piece.figure], " Color:", Side.keys()[piece.color])
+
 # simulate_move duplicates grid and deletes piece on the old tile and places it on the new tile on duplicated grid
 func simulate_move(tile, place, grid):
 	var new_grid = []
