@@ -193,6 +193,19 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 					second = true
 			if first && second:
 				free_rooks.append(r)
+	if len(free_rooks) == 0:
+		return has_moves
+	for r in free_rooks:
+		if r.place.x == 0:
+			for p in grid:
+				if p.place.x == 3:
+					var simulated_grid = simulate_move(r, p, grid)
+					simulated_grid = simulate_move(r, p, simulated_grid)
+					get_available_moves(simulated_grid)
+					var killers = get_king_killers(side, simulated_grid)
+					if len(killers) > 0:
+						break
+					# TODO add special moves as array to tile
 	# TODO simulate castle on free_rooks
 		#for place in tile.movable_places:
 			#var simulated_grid = simulate_move(tile, place, grid)
