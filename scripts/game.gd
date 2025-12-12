@@ -146,6 +146,67 @@ func new_round(grid: Array):
 func loose(side):
 	print(Side.keys()[side], " player lost")
 
+	
+func castle_moves(grid: Array, side: Side, has_moves: bool):
+	var movable_pieces = 0
+	var king = null
+	var rooks = []
+	for tile in grid:
+		if tile.piece != null && tile.piece.color == side && !tile.piece.moved:
+			if tile.piece.figure == Pieces.King:
+				king = tile
+			if tile.piece.figure == Pieces.Rook:
+				rooks.append(tile)
+	if len(rooks) == 0 || king == null:
+		return has_moves
+	var left_side = false
+	var right_side = false
+	for p in king.movable_places:
+		if p.place.x == 3:
+			left_side = true
+		if p.place.x == 5:
+			right_side = true
+	if !(right_side && left_side):
+		return has_moves
+	var free_rooks = []
+	for r in rooks:
+		if r.place.x == 0:
+			var first = false
+			var second = false
+			var third = false
+			for p in r.movable_places:
+				if p.place.x == 1:
+					first = true
+				if p.place.x == 2:
+					second = true
+				if p.place.x == 3:
+					third = true
+			if first && second && third:
+				free_rooks.append(r)
+		if r.place.x == 7:
+			var first = false
+			var second = false
+			for p in r.movable_places:
+				if p.place.x == 6:
+					first = true
+				if p.place.x == 5:
+					second = true
+			if first && second:
+				free_rooks.append(r)
+	# TODO simulate castle on free_rooks
+		#for place in tile.movable_places:
+			#var simulated_grid = simulate_move(tile, place, grid)
+			#get_available_moves(simulated_grid)
+			##print_grid(simulated_grid)
+			#var killers = get_king_killers(side, simulated_grid)
+			#if len(killers) > 0:
+				#not_movable_places.append(place)
+		#for place in not_movable_places:
+			#tile.movable_places.erase(place)
+		#if tile.piece != null && tile.piece.color == side && len(tile.movable_places) > 0:
+			#movable_pieces += 1
+	return movable_pieces > 0
+
 func get_available_moves(grid: Array):
 	for tile in grid:
 		if tile.piece != null:
@@ -227,16 +288,14 @@ func simulate_move(tile, place, grid):
 		new_grid.append(new_tile)
 	
 	return new_grid
-	
+
 func get_test_initial_board():
 	var _board = [
-		Piece.new(Vector2i(0,7), Pieces.King),
-		Piece.new(Vector2i(1,1), Pieces.Pawn),
-		Piece.new(Vector2i(1,6), Pieces.Queen),
-		Piece.new(Vector2i(1,3), Pieces.Rook, Side.Black),
-		Piece.new(Vector2i(1,2), Pieces.Rook, Side.Black),
-		Piece.new(Vector2i(4,7), Pieces.Rook, Side.Black),
-		Piece.new(Vector2i(5,6), Pieces.Pawn, Side.Black),
+		Piece.new(Vector2i(4,7), Pieces.King),
+		Piece.new(Vector2i(0,7), Pieces.Rook),
+		Piece.new(Vector2i(7,7), Pieces.Rook),
+		Piece.new(Vector2i(4,4), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(5,4), Pieces.Rook, Side.Black),
 	]
 	return _board
 
