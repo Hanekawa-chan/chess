@@ -28,12 +28,18 @@ var active_piece: Piece = null:
 			for t in tile.movable_places:
 				old_tile = board.get_cell_atlas_coords(t.place)
 				board.set_cell(t.place, 0, Vector2i(old_tile.x, old_tile.y+2))
+			for t in tile.special_moves:
+				old_tile = board.get_cell_atlas_coords(t.place)
+				board.set_cell(t.place, 0, Vector2i(old_tile.x, old_tile.y+2))
 		if old_place != null:
 			var old_tile = board.get_cell_atlas_coords(old_place.place)
 			print("old tile ", old_place.place)
 			board.set_cell(old_place.place, 0, Vector2i(old_tile.x, old_tile.y-2))
 			var tile = old_place.tile
 			for t in tile.movable_places:
+				old_tile = board.get_cell_atlas_coords(t.place)
+				board.set_cell(t.place, 0, Vector2i(old_tile.x, old_tile.y-2))
+			for t in tile.special_moves:
 				old_tile = board.get_cell_atlas_coords(t.place)
 				board.set_cell(t.place, 0, Vector2i(old_tile.x, old_tile.y-2))
 		print("new active piece ", value, " old place ", old_place)
@@ -138,6 +144,7 @@ func new_round(grid: Array):
 	var fake_grid = copy_chess_grid(grid)
 	get_available_moves(fake_grid)
 	var has_moves = reduce_moves(fake_grid, current_side)
+	has_moves = castle_moves(fake_grid, current_side, has_moves)
 	if has_moves:
 		realize_moves(fake_grid)
 	else:
@@ -196,30 +203,32 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 	if len(free_rooks) == 0:
 		return has_moves
 	for r in free_rooks:
+		var king_pos = 2
+		var rook_pos = 3
+		var king_place
+		var rook_place
 		if r.place.x == 0:
-			for p in grid:
-				if p.place.x == 3:
-					var simulated_grid = simulate_move(r, p, grid)
-					simulated_grid = simulate_move(r, p, simulated_grid)
-					get_available_moves(simulated_grid)
-					var killers = get_king_killers(side, simulated_grid)
-					if len(killers) > 0:
-						break
-					# TODO add special moves as array to tile
-					r.special_moves.append(p)
-	# TODO simulate castle on free_rooks
-		#for place in tile.movable_places:
-			#var simulated_grid = simulate_move(tile, place, grid)
-			#get_available_moves(simulated_grid)
-			##print_grid(simulated_grid)
-			#var killers = get_king_killers(side, simulated_grid)
-			#if len(killers) > 0:
-				#not_movable_places.append(place)
-		#for place in not_movable_places:
-			#tile.movable_places.erase(place)
-		#if tile.piece != null && tile.piece.color == side && len(tile.movable_places) > 0:
-			#movable_pieces += 1
-	return movable_pieces > 0
+			king_pos = 2
+			rook_pos = 3
+		if r.place.x == 7:
+			king_pos = 6
+			rook_pos = 5
+		for p in grid:
+			if p.place.x == rook_pos:
+				rook_place = p
+			if p.place.x == king_pos:
+				king_place = p
+		var simulated_grid = simulate_move(r, rook_place, grid)
+		simulated_grid = simulate_move(king, king_place, simulated_grid)
+		get_available_moves(simulated_grid)
+		var killers = get_king_killers(side, simulated_grid)
+		if len(killers) > 0:
+			break
+		# TODO add special moves as array to tile moving system
+		r.special_moves.append(rook_place)
+		king.special_moves.append(king_place)
+		movable_pieces+=1
+	return movable_pieces > 0 || has_moves
 
 func get_available_moves(grid: Array):
 	for tile in grid:
