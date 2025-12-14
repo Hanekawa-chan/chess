@@ -206,6 +206,7 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 					if len(killers) > 0:
 						break
 					# TODO add special moves as array to tile
+					r.special_moves.append(p)
 	# TODO simulate castle on free_rooks
 		#for place in tile.movable_places:
 			#var simulated_grid = simulate_move(tile, place, grid)
@@ -238,9 +239,12 @@ func copy_chess_grid(grid: Array):
 		new_grid.append(copy_tile)
 	for tile in new_grid:
 		var mov_pos = tile.movable_places
+		var spec_movs = tile.special_moves
 		tile.movable_places = []
 		for pos in mov_pos:
 			tile.movable_places.append(find_tile_by_position(new_grid, pos.place))
+		for pos in spec_movs:
+			tile.special_moves.append(find_tile_by_position(new_grid, pos.place))
 	return new_grid
 
 func realize_moves(grid: Array):
@@ -249,6 +253,7 @@ func realize_moves(grid: Array):
 			if tile.place == t.place:
 				if t.piece != null:
 					t.movable_places = tile.convert_movable_places(chess_grid.get_children())
+					t.special_moves = tile.convert_special_moves(chess_grid.get_children())
 
 func get_king_killers(side: Side, grid: Array):
 	var enemy_side = Side.White

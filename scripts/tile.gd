@@ -33,6 +33,8 @@ var piece: Piece = null:
 var place: Vector2i
 @export
 var movable_places: Array
+@export
+var special_moves: Array
 
 # Called when the node enters the scene tree for the first time.
 func initialize():
@@ -83,11 +85,11 @@ func convert_to_model():
 		_piece.tile_model = copy_tile
 		copy_tile.piece = _piece
 	copy_tile.movable_places = movable_places
+	copy_tile.special_moves = special_moves
 	copy_tile.place = Vector2i(place)
 	return copy_tile
 
 func change_figure_tile():
-	print("wtf")
 	var new_tile =  Vector2i(-1,-1)
 	if piece.color == Game.Side.White:
 		new_tile = game.white_piece_tiles_array[piece.figure]
