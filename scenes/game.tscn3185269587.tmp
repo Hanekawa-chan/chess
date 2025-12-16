@@ -628,9 +628,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="01" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -638,9 +635,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="02" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -648,9 +642,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="03" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -658,9 +649,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="04" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -668,9 +656,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="05" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -678,9 +663,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="06" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -688,9 +670,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="07" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -698,9 +677,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="10" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -708,9 +684,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="11" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -718,9 +691,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="12" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -728,9 +698,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="13" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -738,9 +705,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="14" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -748,9 +712,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="15" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -758,9 +719,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="16" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -768,9 +726,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="17" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -778,9 +733,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="20" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -788,9 +740,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="21" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -798,9 +747,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="22" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -808,9 +754,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="23" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -818,9 +761,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="24" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -828,9 +768,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="25" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -838,9 +775,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="26" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -848,9 +782,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="27" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -858,9 +789,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="30" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -868,9 +796,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="31" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -878,9 +803,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="32" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -888,9 +810,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="33" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -898,9 +817,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="34" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -908,9 +824,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="35" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -918,9 +831,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="36" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -928,9 +838,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="37" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -938,9 +845,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="40" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -948,9 +852,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="41" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -958,9 +859,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="42" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -968,9 +866,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="43" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -978,9 +873,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="44" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -988,9 +880,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="45" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -998,9 +887,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="46" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1008,9 +894,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="47" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1018,9 +901,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="50" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1028,9 +908,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="51" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1038,9 +915,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="52" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1048,9 +922,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="53" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1058,9 +929,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="54" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1068,9 +936,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="55" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1078,9 +943,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="56" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1088,9 +950,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="57" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1098,9 +957,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="60" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1108,9 +964,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="61" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1118,9 +971,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="62" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1128,9 +978,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="63" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1138,9 +985,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="64" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1148,9 +992,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="65" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1158,9 +999,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="66" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1168,9 +1006,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="67" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1178,9 +1013,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="70" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1188,9 +1020,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="71" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1198,9 +1027,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="72" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1208,9 +1034,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="73" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1218,9 +1041,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="74" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1228,9 +1048,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="75" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1238,9 +1055,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="76" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1248,9 +1062,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="77" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
 custom_minimum_size = Vector2(16, 16)
@@ -1258,9 +1069,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_lnu2h")
-place = null
-movable_places = null
-special_moves = null
 
 [node name="Board" type="TileMapLayer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
 unique_name_in_owner = true

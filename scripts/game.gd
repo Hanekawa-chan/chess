@@ -1,5 +1,6 @@
 class_name Game extends Control
 
+@onready var dead_counters = %DeadCounters
 @onready var choosable_pieces = %ChoosablePieces
 @onready var move_number_label = %MoveNumberLabel
 @onready var current_side_label = %CurrentSideLabel
@@ -165,6 +166,7 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 			if tile.piece.figure == Pieces.Rook:
 				rooks.append(tile)
 	if len(rooks) == 0 || king == null:
+		print("amma die 1")
 		return has_moves
 	var left_side = false
 	var right_side = false
@@ -173,7 +175,8 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 			left_side = true
 		if p.place.x == 5:
 			right_side = true
-	if !(right_side && left_side):
+	if !(right_side || left_side):
+		print("amma die 2 left ", left_side, " right ", right_side)
 		return has_moves
 	var free_rooks = []
 	for r in rooks:
@@ -201,6 +204,7 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 			if first && second:
 				free_rooks.append(r)
 	if len(free_rooks) == 0:
+		print("amma die 3")
 		return has_moves
 	for r in free_rooks:
 		var king_pos = 2
@@ -228,6 +232,7 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 		r.special_moves.append(rook_place)
 		king.special_moves.append(king_place)
 		movable_pieces+=1
+	print("amma die 4")
 	return movable_pieces > 0 || has_moves
 
 func get_available_moves(grid: Array):
@@ -319,9 +324,10 @@ func simulate_move(tile, place, grid):
 func get_test_initial_board():
 	var _board = [
 		Piece.new(Vector2i(4,7), Pieces.King),
+		Piece.new(Vector2i(3,6), Pieces.Pawn),
 		Piece.new(Vector2i(0,7), Pieces.Rook),
 		Piece.new(Vector2i(7,7), Pieces.Rook),
-		Piece.new(Vector2i(4,4), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(5,3), Pieces.Rook, Side.Black),
 		Piece.new(Vector2i(5,4), Pieces.Rook, Side.Black),
 	]
 	return _board

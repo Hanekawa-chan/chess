@@ -1,5 +1,6 @@
 class_name ChessTile extends Button
 
+# TODO find place where it draws player's moves on tilemap
 @onready
 var game: Game = $"../../../../../../../../../.."
 @onready
@@ -59,12 +60,15 @@ func _on_button_up():
 				for pos in active_piece.tile.movable_places:
 					if pos.place == place:
 						# PIECE MOVES
+						game.dead_counters.set_count(piece.color, piece.figure)
 						#print("active", active_piece)
 						piece = active_piece
 						game.move_number += 1
 						game.new_round(game.chess_grid.get_children())
 		else:
 			game.active_piece = piece
+			if piece.figure == Game.Pieces.King:
+				print("im king", special_moves)
 	else:
 		#print("clicked me! Pos:", place, " Empty")
 		var active_piece = game.active_piece
@@ -74,6 +78,22 @@ func _on_button_up():
 				if pos.place == place:
 					# PIECE MOVES
 					#print("active", active_piece)
+					piece = active_piece
+					game.move_number += 1
+					game.new_round(game.chess_grid.get_children())
+			for pos in active_piece.tile.special_moves:
+				if pos.place == place:
+					# PIECE DOES SPECIAL MOVE
+					#print("active", active_piece)
+					if active_piece.figure == Game.Pieces.King:
+						for t in game.chess_grid.get_children():
+							if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0:
+								if place.x == 2:
+									var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(3, active_piece.place.y))
+									rook_place.piece = t.piece
+								if place.x == 6:
+									var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(5, active_piece.place.y))
+									rook_place.piece = t.piece
 					piece = active_piece
 					game.move_number += 1
 					game.new_round(game.chess_grid.get_children())
