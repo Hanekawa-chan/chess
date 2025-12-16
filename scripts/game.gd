@@ -255,6 +255,7 @@ func copy_chess_grid(grid: Array):
 		var mov_pos = tile.movable_places
 		var spec_movs = tile.special_moves
 		tile.movable_places = []
+		tile.special_moves = []
 		for pos in mov_pos:
 			tile.movable_places.append(find_tile_by_position(new_grid, pos.place))
 		for pos in spec_movs:

@@ -87,11 +87,12 @@ func _on_button_up():
 					#print("active", active_piece)
 					if active_piece.figure == Game.Pieces.King:
 						for t in game.chess_grid.get_children():
-							if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0:
-								if place.x == 2:
+							if place.x == 2:
+								if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 0:
 									var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(3, active_piece.place.y))
 									rook_place.piece = t.piece
-								if place.x == 6:
+							if place.x == 6:
+								if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 7:
 									var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(5, active_piece.place.y))
 									rook_place.piece = t.piece
 					piece = active_piece
