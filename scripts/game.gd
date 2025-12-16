@@ -258,6 +258,7 @@ func copy_chess_grid(grid: Array):
 		for pos in mov_pos:
 			tile.movable_places.append(find_tile_by_position(new_grid, pos.place))
 		for pos in spec_movs:
+			# TODO for some reason special moves are fucking endless
 			tile.special_moves.append(find_tile_by_position(new_grid, pos.place))
 	return new_grid
 
