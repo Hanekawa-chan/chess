@@ -157,27 +157,32 @@ func loose(side):
 
 func enpassant(pawn: ChessTile, grid: Array, side: Side, has_moves: bool):
 	if pawn == null:
+		print("pawn == null")
 		return has_moves
 	var a_pawn = find_tile_by_position(grid, pawn.place)
 	var enpassant_pos = Vector2i(a_pawn.place)
 	var direction = -1
 	if pawn.piece.color == Side.White:
 		enpassant_pos.y += 1
+		direction = 1
 	else:
 		enpassant_pos.y -= 1
-		direction = 1
 	var enpassant_tile = find_tile_by_position(grid, enpassant_pos)
+	# TODO add has_moves update
 	for t in grid:
 		if t.piece != null && t.piece.figure == Pieces.Pawn && t.piece.color == side:
+			print("enemy pawn found")
+			print("t place: ", t.place, " enpassant pos: ", enpassant_pos, " direction: ", direction)
 			if abs(t.place.x - enpassant_pos.x) == 1 && enpassant_pos.y - t.place.y == direction:
-				var simulated_grid = simulate_move(a_pawn, enpassant_pos, grid)
-				simulated_grid = simulate_move(t, enpassant_pos, simulated_grid)
+				print("enemy pawn that can enpassant found")
+				var simulated_grid = simulate_move(a_pawn, enpassant_tile, grid)
+				simulated_grid = simulate_move(t, enpassant_tile, simulated_grid)
 				get_available_moves(simulated_grid)
 				var killers = get_king_killers(side, simulated_grid)
 				if len(killers) > 0:
 					continue
 				t.special_moves.append(enpassant_tile)
-				if a_pawn.special_moves > 1:
+				if len(a_pawn.special_moves) > 1:
 					print("pawn already has special moves")
 					continue
 				a_pawn.special_moves.append(enpassant_tile)
@@ -341,6 +346,7 @@ func simulate_move(tile, place, grid):
 		if new_tile.piece != null && new_tile.piece.place == tile.piece.place:
 			new_tile.piece = null
 		if new_tile.place == place.place:
+			# TODO maybe problem is that it thinks that tiles have special moves
 			new_tile.piece = tile.piece.make_copy()
 			new_tile.piece.tile_model = new_tile
 		new_grid.append(new_tile)
