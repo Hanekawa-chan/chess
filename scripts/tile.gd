@@ -16,6 +16,9 @@ var piece: Piece = null:
 				tile.movable_places = []
 				value.place = place
 				value.moved = true
+		else:
+			movable_places = []
+			special_moves = []
 		piece = value
 		var new_tile =  Vector2i(-1,-1)
 		if piece != null:
