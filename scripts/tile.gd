@@ -64,7 +64,8 @@ func _on_button_up():
 						#print("active", active_piece)
 						piece = active_piece
 						game.move_number += 1
-						game.new_round(game.chess_grid.get_children())
+						game.new_round(game.chess_grid.get_children(), null)
+						break
 		else:
 			game.active_piece = piece
 			if piece.figure == Game.Pieces.King:
@@ -78,9 +79,16 @@ func _on_button_up():
 				if pos.place == place:
 					# PIECE MOVES
 					#print("active", active_piece)
+					var is_enpassantable = false
+					if active_piece.figure == Game.Pieces.Pawn && abs(active_piece.place.y - pos.place.y) == 2:
+						is_enpassantable = true
 					piece = active_piece
 					game.move_number += 1
-					game.new_round(game.chess_grid.get_children())
+					if is_enpassantable:
+						game.new_round(game.chess_grid.get_children(), self)
+					else:
+						game.new_round(game.chess_grid.get_children(), null)
+					break
 			for pos in active_piece.tile.special_moves:
 				if pos.place == place:
 					# PIECE DOES SPECIAL MOVE
@@ -91,13 +99,23 @@ func _on_button_up():
 								if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 0:
 									var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(3, active_piece.place.y))
 									rook_place.piece = t.piece
+									break
 							if place.x == 6:
 								if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 7:
 									var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(5, active_piece.place.y))
 									rook_place.piece = t.piece
+									break
+					if active_piece.figure == Game.Pieces.Pawn:
+						for t in game.chess_grid.get_children():
+							if t.piece != null && t.piece.figure == Game.Pieces.Pawn && t.piece.color != active_piece.color:
+								if len(t.special_moves) > 0:
+									game.dead_counters.set_count(t.piece.color, t.piece.figure)
+									t.piece = null
+									break
 					piece = active_piece
 					game.move_number += 1
-					game.new_round(game.chess_grid.get_children())
+					game.new_round(game.chess_grid.get_children(), null)
+					break
 					
 func convert_to_model():
 	var copy_tile = ChessTileModel.new()

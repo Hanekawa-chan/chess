@@ -141,11 +141,12 @@ func pawn_to_figure(figure: Pieces):
 		pawn_to_transfigure.change_figure_on_grid(figure)
 		pawn_to_transfigure = null
 
-func new_round(grid: Array):
+func new_round(grid: Array, pawn: ChessTile):
 	var fake_grid = copy_chess_grid(grid)
 	get_available_moves(fake_grid)
 	var has_moves = reduce_moves(fake_grid, current_side)
 	has_moves = castle_moves(fake_grid, current_side, has_moves)
+	has_moves = enpassant(pawn, fake_grid, current_side, has_moves)
 	if has_moves:
 		realize_moves(fake_grid)
 	else:
@@ -154,7 +155,34 @@ func new_round(grid: Array):
 func loose(side):
 	print(Side.keys()[side], " player lost")
 
-	
+func enpassant(pawn: ChessTile, grid: Array, side: Side, has_moves: bool):
+	if pawn == null:
+		return has_moves
+	var a_pawn = find_tile_by_position(grid, pawn.place)
+	var enpassant_pos = Vector2i(a_pawn.place)
+	var direction = -1
+	if pawn.piece.color == Side.White:
+		enpassant_pos.y += 1
+	else:
+		enpassant_pos.y -= 1
+		direction = 1
+	var enpassant_tile = find_tile_by_position(grid, enpassant_pos)
+	for t in grid:
+		if t.piece != null && t.piece.figure == Pieces.Pawn && t.piece.color == side:
+			if abs(t.place.x - enpassant_pos.x) == 1 && enpassant_pos.y - t.place.y == direction:
+				var simulated_grid = simulate_move(a_pawn, enpassant_pos, grid)
+				simulated_grid = simulate_move(t, enpassant_pos, simulated_grid)
+				get_available_moves(simulated_grid)
+				var killers = get_king_killers(side, simulated_grid)
+				if len(killers) > 0:
+					continue
+				t.special_moves.append(enpassant_tile)
+				if a_pawn.special_moves > 1:
+					print("pawn already has special moves")
+					continue
+				a_pawn.special_moves.append(enpassant_tile)
+	return has_moves
+
 func castle_moves(grid: Array, side: Side, has_moves: bool):
 	var movable_pieces = 0
 	var king = null
@@ -166,7 +194,6 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 			if tile.piece.figure == Pieces.Rook:
 				rooks.append(tile)
 	if len(rooks) == 0 || king == null:
-		print("amma die 1")
 		return has_moves
 	var left_side = false
 	var right_side = false
@@ -176,7 +203,6 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 		if p.place.x == 5:
 			right_side = true
 	if !(right_side || left_side):
-		print("amma die 2 left ", left_side, " right ", right_side)
 		return has_moves
 	var free_rooks = []
 	for r in rooks:
@@ -204,7 +230,6 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 			if first && second:
 				free_rooks.append(r)
 	if len(free_rooks) == 0:
-		print("amma die 3")
 		return has_moves
 	for r in free_rooks:
 		var king_pos = 2
@@ -232,7 +257,6 @@ func castle_moves(grid: Array, side: Side, has_moves: bool):
 		r.special_moves.append(rook_place)
 		king.special_moves.append(king_place)
 		movable_pieces+=1
-	print("amma die 4")
 	return movable_pieces > 0 || has_moves
 
 func get_available_moves(grid: Array):
@@ -327,10 +351,7 @@ func get_test_initial_board():
 	var _board = [
 		Piece.new(Vector2i(4,7), Pieces.King),
 		Piece.new(Vector2i(3,6), Pieces.Pawn),
-		Piece.new(Vector2i(0,7), Pieces.Rook),
-		Piece.new(Vector2i(7,7), Pieces.Rook),
-		Piece.new(Vector2i(5,3), Pieces.Rook, Side.Black),
-		Piece.new(Vector2i(5,4), Pieces.Rook, Side.Black),
+		Piece.new(Vector2i(4,4), Pieces.Pawn, Side.Black),
 	]
 	return _board
 
