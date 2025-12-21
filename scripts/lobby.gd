@@ -36,6 +36,11 @@ func _exit():
 	
 func _start():
 	print("started")
+	start_game.rpc()
+	
+@rpc("any_peer", "call_local")
+func start_game():
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	
 func _switch_start_game_button(count: int):
 	print("count changed ", count)

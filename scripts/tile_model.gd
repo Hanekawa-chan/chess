@@ -9,6 +9,11 @@ var piece: Piece = null:
 				tile.piece = null
 				value.place = place
 				value.moved = true
+				special_moves = []
+				movable_places = []
+		else:
+			special_moves = []
+			movable_places = []
 		piece = value
 
 @export

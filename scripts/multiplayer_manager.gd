@@ -10,6 +10,18 @@ var players_count = 1
 var player_name = "bob"
 var host_name = "bob"
 var client_name = "bob"
+var host_side = Game.Side.White
+var client_side = Game.Side.Black
+
+func set_random_sides():
+	var rng = RandomNumberGenerator.new()
+	if rng.randf() >= 0.5:
+		set_sides.rpc(Game.Side.Black, Game.Side.White)
+
+@rpc("authority", "call_remote")
+func set_sides(_host_side, _client_side):
+	host_side = _host_side
+	client_side = _client_side
 
 func become_host():
 	print("hosting on port:", server_port)
