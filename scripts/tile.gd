@@ -1,6 +1,5 @@
 class_name ChessTile extends Button
 
-# TODO find place where it draws player's moves on tilemap
 @onready
 var game: Game = $"../../../../../../../../../.."
 @onready
@@ -50,75 +49,94 @@ func initialize():
 	#var atlas = pieces.get_cell_atlas_coords(place)
 	#piece = Piece.new(place, game.piece_tiles_dict.get(atlas))
 
+# TODO find out difference between local and remote calling
+@rpc("any_peer", "call_local")
+func set_active_piece(_piece: Piece):
+	print("did it happen? set_active_piece ", MultiplayerManager.player_name)
+	game.active_piece = _piece
+
+@rpc("any_peer", "call_local")
+func increase_move_number():
+	print("did it happen? increase_move_number ", MultiplayerManager.player_name)
+	game.move_number += 1
+
+@rpc("any_peer", "call_local")
+func set_piece(_piece: Piece):
+	print("did it happen? set_piece ", MultiplayerManager.player_name)
+	piece = _piece
+
+@rpc("any_peer", "call_local")
+func set_dead_count(_piece: Piece):
+	print("did it happen? set_dead_count ", MultiplayerManager.player_name)
+	game.dead_counters.set_count(_piece.color, _piece.figure)
+
 func _on_button_up():
-	if piece != null:
-		#print("clicked me! Pos:", place, " Fig:", Game.Pieces.keys()[piece.figure], " Color:", Game.Side.keys()[piece.color], " Available moves:", movable_places)
-		if game.active_piece != null:
-			if game.active_piece.color == piece.color:
-				game.active_piece = piece
+	if game.current_side == MultiplayerManager.player_side:
+		if piece != null:
+			#print("clicked me! Pos:", place, " Fig:", Game.Pieces.keys()[piece.figure], " Color:", Game.Side.keys()[piece.color], " Available moves:", movable_places)
+			if game.active_piece != null:
+				if game.active_piece.color == piece.color:
+					set_active_piece.rpc(piece)
+				else:
+					var active_piece = game.active_piece
+					set_active_piece.rpc(null)
+					for pos in active_piece.tile.movable_places:
+						if pos.place == place:
+							# PIECE MOVES
+							set_dead_count.rpc(piece)
+							#print("active", active_piece)
+							set_piece.rpc(active_piece)
+							increase_move_number.rpc()
+							game.new_round.rpc(game.chess_grid.get_children(), null)
+							break
 			else:
-				# TODO add list of beaten pieces
-				var active_piece = game.active_piece
-				game.active_piece = null
+				set_active_piece.rpc(piece)
+		else:
+			#print("clicked me! Pos:", place, " Empty")
+			var active_piece = game.active_piece
+			if active_piece != null:
+				set_active_piece.rpc(null)
 				for pos in active_piece.tile.movable_places:
 					if pos.place == place:
 						# PIECE MOVES
-						game.dead_counters.set_count(piece.color, piece.figure)
 						#print("active", active_piece)
-						piece = active_piece
-						game.move_number += 1
-						game.new_round(game.chess_grid.get_children(), null)
+						var is_enpassantable = false
+						if active_piece.figure == Game.Pieces.Pawn && abs(active_piece.place.y - pos.place.y) == 2:
+							is_enpassantable = true
+						set_piece.rpc(active_piece)
+						increase_move_number.rpc()
+						if is_enpassantable:
+							game.new_round.rpc(game.chess_grid.get_children(), self)
+						else:
+							game.new_round.rpc(game.chess_grid.get_children(), null)
 						break
-		else:
-			game.active_piece = piece
-			if piece.figure == Game.Pieces.King:
-				print("im king", special_moves)
-	else:
-		#print("clicked me! Pos:", place, " Empty")
-		var active_piece = game.active_piece
-		if active_piece != null:
-			game.active_piece = null
-			for pos in active_piece.tile.movable_places:
-				if pos.place == place:
-					# PIECE MOVES
-					#print("active", active_piece)
-					var is_enpassantable = false
-					if active_piece.figure == Game.Pieces.Pawn && abs(active_piece.place.y - pos.place.y) == 2:
-						is_enpassantable = true
-					piece = active_piece
-					game.move_number += 1
-					if is_enpassantable:
-						game.new_round(game.chess_grid.get_children(), self)
-					else:
-						game.new_round(game.chess_grid.get_children(), null)
-					break
-			for pos in active_piece.tile.special_moves:
-				if pos.place == place:
-					# PIECE DOES SPECIAL MOVE
-					#print("active", active_piece)
-					if active_piece.figure == Game.Pieces.King:
-						for t in game.chess_grid.get_children():
-							if place.x == 2:
-								if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 0:
-									var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(3, active_piece.place.y))
-									rook_place.piece = t.piece
-									break
-							if place.x == 6:
-								if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 7:
-									var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(5, active_piece.place.y))
-									rook_place.piece = t.piece
-									break
-					if active_piece.figure == Game.Pieces.Pawn:
-						for t in game.chess_grid.get_children():
-							if t.piece != null && t.piece.figure == Game.Pieces.Pawn && t.piece.color != active_piece.color:
-								if len(t.special_moves) > 0:
-									game.dead_counters.set_count(t.piece.color, t.piece.figure)
-									t.piece = null
-									break
-					piece = active_piece
-					game.move_number += 1
-					game.new_round(game.chess_grid.get_children(), null)
-					break
+				for pos in active_piece.tile.special_moves:
+					if pos.place == place:
+						# PIECE DOES SPECIAL MOVE
+						#print("active", active_piece)
+						if active_piece.figure == Game.Pieces.King:
+							for t in game.chess_grid.get_children():
+								if place.x == 2:
+									if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 0:
+										var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(3, active_piece.place.y))
+										rook_place.set_piece.rpc(t.piece)
+										break
+								if place.x == 6:
+									if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 7:
+										var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(5, active_piece.place.y))
+										rook_place.set_piece.rpc(t.piece)
+										break
+						if active_piece.figure == Game.Pieces.Pawn:
+							for t in game.chess_grid.get_children():
+								if t.piece != null && t.piece.figure == Game.Pieces.Pawn && t.piece.color != active_piece.color:
+									if len(t.special_moves) > 0:
+										set_dead_count.rpc(t.piece)
+										t.set_piece.rpc(null)
+										break
+						set_piece.rpc(active_piece)
+						increase_move_number.rpc()
+						game.new_round.rpc(game.chess_grid.get_children(), null)
+						break
 					
 func convert_to_model():
 	var copy_tile = ChessTileModel.new()

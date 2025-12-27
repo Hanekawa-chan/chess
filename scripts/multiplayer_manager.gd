@@ -12,11 +12,14 @@ var host_name = "bob"
 var client_name = "bob"
 var host_side = Game.Side.White
 var client_side = Game.Side.Black
+var player_side = Game.Side.White
 
 func set_random_sides():
 	var rng = RandomNumberGenerator.new()
 	if rng.randf() >= 0.5:
 		set_sides.rpc(Game.Side.Black, Game.Side.White)
+		if !multiplayer.is_server():
+			player_side = client_side
 
 @rpc("authority", "call_remote")
 func set_sides(_host_side, _client_side):

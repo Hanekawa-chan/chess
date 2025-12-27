@@ -1,5 +1,6 @@
 class_name Game extends Control
 
+@onready var player_name_label = %PlayerNameLabel
 @onready var dead_counters = %DeadCounters
 @onready var choosable_pieces = %ChoosablePieces
 @onready var move_number_label = %MoveNumberLabel
@@ -10,7 +11,7 @@ class_name Game extends Control
 @onready var current_side = Side.White
 var move_number: int = 1:
 	set(value):
-		move_number_label.text = "move number: " + str(value)
+		move_number_label.text = " move number: " + str(value)
 		move_number = value
 		if move_number % 2 == 1:
 			current_side = Side.White
@@ -125,8 +126,9 @@ func _set_scale():
 	
 
 func _ready():
+	player_name_label.text = " name: "+MultiplayerManager.player_name
 	chess_grid.resized.connect(_set_scale)
-	var _board = get_test_initial_board()
+	var _board = get_initial_board()
 	for cell in chess_grid.get_children():
 		cell.initialize()
 		for piece in _board:
@@ -141,6 +143,7 @@ func pawn_to_figure(figure: Pieces):
 		pawn_to_transfigure.change_figure_on_grid(figure)
 		pawn_to_transfigure = null
 
+@rpc("any_peer", "call_local")
 func new_round(grid: Array, pawn: ChessTile):
 	var fake_grid = copy_chess_grid(grid)
 	get_available_moves(fake_grid)

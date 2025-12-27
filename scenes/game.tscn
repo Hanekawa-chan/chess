@@ -1323,3 +1323,8 @@ text = " move number: 1"
 unique_name_in_owner = true
 layout_mode = 2
 text = "white is playing"
+
+[node name="PlayerNameLabel" type="Label" parent="CenterContainer/HBoxContainer/RightSide/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " name:"
