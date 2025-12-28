@@ -14,14 +14,21 @@ var host_side = Game.Side.White
 var client_side = Game.Side.Black
 var player_side = Game.Side.White
 
+func _ready():
+	multiplayer.allow_object_decoding = true
+
 func set_random_sides():
 	var rng = RandomNumberGenerator.new()
+	print("set sides ", player_name, " host ", host_side, " client ", client_side, " player ", player_side, " is server ", multiplayer.is_server())
 	if rng.randf() >= 0.5:
 		set_sides.rpc(Game.Side.Black, Game.Side.White)
 		if !multiplayer.is_server():
 			player_side = client_side
+		else:
+			player_side = host_side
+	print("set sides ", player_name, " host ", host_side, " client ", client_side, " player ", player_side, " is server ", multiplayer.is_server())
 
-@rpc("authority", "call_remote")
+@rpc("authority", "call_local")
 func set_sides(_host_side, _client_side):
 	host_side = _host_side
 	client_side = _client_side

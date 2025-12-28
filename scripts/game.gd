@@ -144,8 +144,14 @@ func pawn_to_figure(figure: Pieces):
 		pawn_to_transfigure = null
 
 @rpc("any_peer", "call_local")
-func new_round(grid: Array, pawn: ChessTile):
-	var fake_grid = copy_chess_grid(grid)
+func new_round(_pawn: Vector2i):
+	print("new round happened? ", MultiplayerManager.player_name)
+	var fake_grid = copy_chess_grid(chess_grid.get_children())
+	var pawn: ChessTile
+	if _pawn == Vector2i(-1,-1):
+		pawn = null
+	else:
+		pawn = find_tile_by_position(chess_grid.get_children(), _pawn)
 	get_available_moves(fake_grid)
 	var has_moves = reduce_moves(fake_grid, current_side)
 	has_moves = castle_moves(fake_grid, current_side, has_moves)
@@ -153,9 +159,9 @@ func new_round(grid: Array, pawn: ChessTile):
 	if has_moves:
 		realize_moves(fake_grid)
 	else:
-		loose(current_side)
+		lose(current_side)
 	
-func loose(side):
+func lose(side):
 	print(Side.keys()[side], " player lost")
 
 func enpassant(pawn: ChessTile, grid: Array, side: Side, has_moves: bool):
