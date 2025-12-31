@@ -5,7 +5,6 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MultiplayerManager.set_random_sides()
 	if MultiplayerManager.host_side == Game.Side.White:
 		first_player_name.text = MultiplayerManager.host_name + " playing as white"
 		second_player_name.text = MultiplayerManager.client_name + " playing as black"

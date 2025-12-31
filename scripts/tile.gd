@@ -97,7 +97,7 @@ func _on_button_up():
 	print("player side ", MultiplayerManager.player_side)
 	print("current side ", game.current_side)
 	if game.current_side == MultiplayerManager.player_side:
-		if piece != null:
+		if piece != null && ((game.active_piece == null && MultiplayerManager.player_side == piece.color) || (game.active_piece != null && MultiplayerManager.player_side != piece.color)):
 			#print("clicked me! Pos:", place, " Fig:", Game.Pieces.keys()[piece.figure], " Color:", Game.Side.keys()[piece.color], " Available moves:", movable_places)
 			if game.active_piece != null:
 				if game.active_piece.color == piece.color:

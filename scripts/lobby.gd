@@ -45,6 +45,7 @@ func start_game():
 func _switch_start_game_button(count: int):
 	print("count changed ", count)
 	if count == 2:
+		MultiplayerManager.set_random_sides()
 		start_game_button.disabled = false
 	else:
 		start_game_button.disabled = true

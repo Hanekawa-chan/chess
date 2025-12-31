@@ -19,19 +19,21 @@ func _ready():
 
 func set_random_sides():
 	var rng = RandomNumberGenerator.new()
-	print("set sides ", player_name, " host ", host_side, " client ", client_side, " player ", player_side, " is server ", multiplayer.is_server())
+	print("set random sides ", player_name, " host ", host_side, " client ", client_side, " player ", player_side, " is server ", multiplayer.is_server())
 	if rng.randf() >= 0.5:
 		set_sides.rpc(Game.Side.Black, Game.Side.White)
-		if !multiplayer.is_server():
-			player_side = client_side
-		else:
-			player_side = host_side
-	print("set sides ", player_name, " host ", host_side, " client ", client_side, " player ", player_side, " is server ", multiplayer.is_server())
+	if !multiplayer.is_server():
+		player_side = client_side
+	else:
+		player_side = host_side
+	print("set random sides ", player_name, " host ", host_side, " client ", client_side, " player ", player_side, " is server ", multiplayer.is_server())
 
 @rpc("authority", "call_local")
 func set_sides(_host_side, _client_side):
+	print("set sides ", player_name, " host ", host_side, " client ", client_side, " player ", player_side, " is server ", multiplayer.is_server())
 	host_side = _host_side
 	client_side = _client_side
+	print("set sides ", player_name, " host ", host_side, " client ", client_side, " player ", player_side, " is server ", multiplayer.is_server())
 
 func become_host():
 	print("hosting on port:", server_port)
