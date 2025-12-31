@@ -3,6 +3,7 @@ extends Control
 @onready var exit_button = %ExitButton
 @onready var enter_lobby_button = %EnterLobbyButton
 @onready var create_lobby_button = %CreateLobbyButton
+@onready var address_edit = %AddressEdit
 const POPUP = preload("res://scenes/popup.tscn")
 @onready var current_name = %CurrentName
 @onready var name_edit = %NameEdit
@@ -14,6 +15,10 @@ func _ready():
 	enter_lobby_button.button_down.connect(_enter_lobby)
 	create_lobby_button.button_down.connect(_create_lobby)
 	change_name_button.button_down.connect(_change_name)
+	address_edit.text_changed.connect(_change_address)
+	
+func _change_address(address):
+	MultiplayerManager.server_ip = address
 
 func _change_name():
 	var val = name_edit.text
