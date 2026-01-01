@@ -5,7 +5,6 @@ var game: Game = $"../../../../../../../../../.."
 @onready
 var pieces = %Pieces
 
-#TODO make setter a distinct function with grid as argument, because we need to find tile in it
 @export
 var piece: Piece = null:
 	set(value):
@@ -84,11 +83,6 @@ func set_piece(piece_place: Vector2i):
 	piece = _piece
 
 @rpc("any_peer", "call_local")
-func increase_move_number():
-	print("did it happen? increase_move_number ", MultiplayerManager.player_name)
-	game.move_number += 1
-
-@rpc("any_peer", "call_local")
 func set_dead_count(color, figure):
 	print("did it happen? set_dead_count ", MultiplayerManager.player_name)
 	game.dead_counters.set_count(color, figure)
@@ -96,26 +90,27 @@ func set_dead_count(color, figure):
 func _on_button_up():
 	print("player side ", MultiplayerManager.player_side)
 	print("current side ", game.current_side)
-	if game.current_side == MultiplayerManager.player_side:
-		if piece != null && ((game.active_piece == null && MultiplayerManager.player_side == piece.color) || (game.active_piece != null && MultiplayerManager.player_side != piece.color)):
-			#print("clicked me! Pos:", place, " Fig:", Game.Pieces.keys()[piece.figure], " Color:", Game.Side.keys()[piece.color], " Available moves:", movable_places)
-			if game.active_piece != null:
-				if game.active_piece.color == piece.color:
-					_set_active_piece(piece)
+	if game.current_side == MultiplayerManager.player_side && game.pawn_to_transfigure == null:
+		if piece != null:
+			if (game.active_piece == null && MultiplayerManager.player_side == piece.color) || (game.active_piece != null && MultiplayerManager.player_side != piece.color):
+				#print("clicked me! Pos:", place, " Fig:", Game.Pieces.keys()[piece.figure], " Color:", Game.Side.keys()[piece.color], " Available moves:", movable_places)
+				if game.active_piece != null:
+					if game.active_piece.color == piece.color:
+						_set_active_piece(piece)
+					else:
+						var active_piece = game.active_piece
+						_set_active_piece(null)
+						for pos in active_piece.tile.movable_places:
+							if pos.place == place:
+								# PIECE MOVES
+								set_dead_count.rpc(piece.color, piece.figure)
+								#print("active", active_piece)
+								_set_piece(active_piece)
+								if !(active_piece.figure == Game.Pieces.Pawn && ((place.y==0 && active_piece.color == Game.Side.White) || (place.y==7 && active_piece.color == Game.Side.Black))):
+									game.new_round.rpc(Vector2i(-1,-1))
+								break
 				else:
-					var active_piece = game.active_piece
-					_set_active_piece(null)
-					for pos in active_piece.tile.movable_places:
-						if pos.place == place:
-							# PIECE MOVES
-							set_dead_count.rpc(piece.color, piece.figure)
-							#print("active", active_piece)
-							_set_piece(active_piece)
-							increase_move_number.rpc()
-							game.new_round.rpc(Vector2i(-1,-1))
-							break
-			else:
-				_set_active_piece(piece)
+					_set_active_piece(piece)
 		else:
 			#print("clicked me! Pos:", place, " Empty")
 			var active_piece = game.active_piece
@@ -129,11 +124,11 @@ func _on_button_up():
 						if active_piece.figure == Game.Pieces.Pawn && abs(active_piece.place.y - pos.place.y) == 2:
 							is_enpassantable = true
 						_set_piece(active_piece)
-						increase_move_number.rpc()
 						if is_enpassantable:
 							game.new_round.rpc(self.place)
 						else:
-							game.new_round.rpc(Vector2i(-1,-1))
+							if !(active_piece.figure == Game.Pieces.Pawn && ((place.y==0 && active_piece.color == Game.Side.White) || (place.y==7 && active_piece.color == Game.Side.Black))):
+								game.new_round.rpc(Vector2i(-1,-1))
 						break
 				for pos in active_piece.tile.special_moves:
 					if pos.place == place:
@@ -159,7 +154,6 @@ func _on_button_up():
 										t._set_piece(null)
 										break
 						_set_piece(active_piece)
-						increase_move_number.rpc()
 						game.new_round.rpc(Vector2i(-1,-1))
 						break
 					

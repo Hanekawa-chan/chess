@@ -137,15 +137,18 @@ func _ready():
 				piece.tile = cell
 				break
 	get_available_moves(chess_grid.get_children())
-	
+
+@rpc("any_peer", "call_local")
 func pawn_to_figure(figure: Pieces):
 	if pawn_to_transfigure != null:
 		pawn_to_transfigure.change_figure_on_grid(figure)
 		pawn_to_transfigure = null
+		new_round(Vector2i(-1,-1))
 
 @rpc("any_peer", "call_local")
 func new_round(_pawn: Vector2i):
 	print("new round happened? ", MultiplayerManager.player_name)
+	move_number += 1
 	var fake_grid = copy_chess_grid(chess_grid.get_children())
 	var pawn: ChessTile
 	if _pawn == Vector2i(-1,-1):
