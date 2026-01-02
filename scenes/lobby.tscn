@@ -49,9 +49,3 @@ layout_mode = 2
 [node name="ClientName" type="Label" parent="PanelContainer/CenterContainer/HBoxContainer/PlayerList"]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="Button" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/PlayerList"]
-layout_mode = 2
-text = "test"
-
-[connection signal="button_down" from="PanelContainer/CenterContainer/HBoxContainer/PlayerList/Button" to="." method="_on_button_button_down"]

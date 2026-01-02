@@ -3,6 +3,9 @@ extends Node
 signal players_count_changed(count: int)
 signal client_name_changed(name: String)
 signal host_name_changed(name: String)
+const GAME = preload("uid://bv8trog1nw6qp")
+const LOBBY = preload("uid://8cvj5dv8dxvs")
+const MAIN_MENU = preload("uid://eleimwoxt82l")
 
 const server_port = 9002
 var server_ip = "127.0.0.1"
@@ -59,7 +62,7 @@ func join():
 
 func _return_to_main_menu():
 	print("returning to main menu")
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file(MAIN_MENU.resource_path)
 	
 func _force_return_to_main_menu():
 	_return_to_main_menu()
@@ -81,11 +84,13 @@ func _delete_player(id: int):
 	players_count_changed.emit(players_count)
 	client_name = ""
 	client_name_changed.emit("")
+	if get_tree().current_scene.name == "Game":
+		get_tree().change_scene_to_file(LOBBY.resource_path)
 
 @rpc("any_peer", "call_remote", "reliable")
 func switch_scene():
 	print("switch scene", " peer ", multiplayer.get_unique_id())
-	get_tree().change_scene_to_file("res://scenes/lobby.tscn")
+	get_tree().change_scene_to_file(LOBBY.resource_path)
 
 @rpc("any_peer", "call_local", "reliable")
 func set_host_name(_name: String):

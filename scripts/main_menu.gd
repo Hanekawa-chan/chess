@@ -4,10 +4,11 @@ extends Control
 @onready var enter_lobby_button = %EnterLobbyButton
 @onready var create_lobby_button = %CreateLobbyButton
 @onready var address_edit = %AddressEdit
-const POPUP = preload("res://scenes/popup.tscn")
 @onready var current_name = %CurrentName
 @onready var name_edit = %NameEdit
 @onready var change_name_button = %ChangeNameButton
+const POPUP = preload("uid://jvgunv5ppmuc")
+const LOBBY = preload("uid://8cvj5dv8dxvs")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,7 +35,7 @@ func _enter_lobby():
 	
 func _create_lobby():
 	MultiplayerManager.become_host()
-	get_tree().change_scene_to_file("res://scenes/lobby.tscn")
+	get_tree().change_scene_to_file(LOBBY.resource_path)
 
 
 func _on_button_button_down():
