@@ -4,6 +4,7 @@ class_name ChessTile extends Button
 var game: Game = $"../../../../../../../../../.."
 @onready
 var pieces = %Pieces
+@onready var button_audio_player = Core.button_audio_player
 
 @export
 var piece: Piece = null:
@@ -94,6 +95,7 @@ func _on_button_up():
 		if piece != null:
 			if (game.active_piece == null && MultiplayerManager.player_side == piece.color) || (game.active_piece != null && MultiplayerManager.player_side != piece.color):
 				#print("clicked me! Pos:", place, " Fig:", Game.Pieces.keys()[piece.figure], " Color:", Game.Side.keys()[piece.color], " Available moves:", movable_places)
+				button_audio_player.play_normal()
 				if game.active_piece != null:
 					if game.active_piece.color == piece.color:
 						_set_active_piece(piece)
@@ -111,7 +113,10 @@ func _on_button_up():
 								break
 				else:
 					_set_active_piece(piece)
+			else:
+				button_audio_player.play_wrong()
 		else:
+			button_audio_player.play_normal()
 			#print("clicked me! Pos:", place, " Empty")
 			var active_piece = game.active_piece
 			if active_piece != null:
@@ -156,7 +161,9 @@ func _on_button_up():
 						_set_piece(active_piece)
 						game.new_round.rpc(Vector2i(-1,-1))
 						break
-					
+	else:
+		button_audio_player.play_wrong()
+
 func convert_to_model():
 	var copy_tile = ChessTileModel.new()
 	if piece != null:

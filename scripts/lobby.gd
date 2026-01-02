@@ -5,6 +5,8 @@ extends Control
 @onready var menu_container = %MenuContainer
 @onready var host_name = %HostName
 @onready var client_name = %ClientName
+@onready var button_audio_player = Core.button_audio_player
+const BUTTON_PRESS = preload("uid://dnr6ia0n4goas")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,10 +33,12 @@ func _host_name_changed(_name: String):
 	host_name.text = _name
 
 func _exit():
+	button_audio_player.play()
 	multiplayer.multiplayer_peer = null
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
 func _start():
+	button_audio_player.play()
 	print("started")
 	start_game.rpc()
 	

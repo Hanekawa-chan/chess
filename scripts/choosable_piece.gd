@@ -5,6 +5,7 @@ var piece: Game.Pieces
 @onready
 var game: Game = $"../../../../../.."
 var texture: AtlasTexture
+@onready var button_audio_player = Core.button_audio_player
 
 func _ready():
 	texture = texture_normal as AtlasTexture
@@ -17,4 +18,10 @@ func _ready():
 func _on_button_up():
 	if game.current_side == MultiplayerManager.player_side:
 		print("pressed")
-		game.pawn_to_figure.rpc(piece)
+		if game.pawn_to_transfigure != null:
+			button_audio_player.play_normal()
+			game.pawn_to_figure.rpc(piece)
+		else:
+			button_audio_player.play_wrong()
+	else:
+		button_audio_player.play_wrong()

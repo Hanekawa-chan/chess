@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dttdgvrsvgom7"]
+
+[ext_resource type="Script" uid="uid://bjo33g2v5m0yp" path="res://scripts/core.gd" id="1_gmp2s"]
+[ext_resource type="AudioStream" uid="uid://dnr6ia0n4goas" path="res://sounds/button_press.wav" id="1_hlf4f"]
+[ext_resource type="Script" uid="uid://yomr304cn0of" path="res://scripts/button_audio_player.gd" id="2_c8oal"]
+[ext_resource type="AudioStream" uid="uid://b3rc2mo05ryun" path="res://sounds/background.mp3" id="4_qapo8"]
+
+[node name="Core" type="Node"]
+script = ExtResource("1_gmp2s")
+
+[node name="ButtonAudioPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_hlf4f")
+script = ExtResource("2_c8oal")
+
+[node name="BackgroundAudioPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_qapo8")

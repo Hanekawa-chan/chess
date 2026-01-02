@@ -140,10 +140,9 @@ func _ready():
 
 @rpc("any_peer", "call_local")
 func pawn_to_figure(figure: Pieces):
-	if pawn_to_transfigure != null:
-		pawn_to_transfigure.change_figure_on_grid(figure)
-		pawn_to_transfigure = null
-		new_round(Vector2i(-1,-1))
+	pawn_to_transfigure.change_figure_on_grid(figure)
+	pawn_to_transfigure = null
+	new_round(Vector2i(-1,-1))
 
 @rpc("any_peer", "call_local")
 func new_round(_pawn: Vector2i):

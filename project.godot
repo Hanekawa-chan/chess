@@ -19,6 +19,7 @@ config/icon="uid://ypahfs73bech"
 
 MultiplayerManager="*res://scripts/multiplayer_manager.gd"
 GlobalPopup="*res://scenes/popup.tscn"
+Core="*res://scenes/core.tscn"
 
 [display]
 

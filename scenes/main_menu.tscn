@@ -45,6 +45,7 @@ text = "Create Lobby"
 [node name="AddressEdit" type="LineEdit" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
+placeholder_text = "address"
 
 [node name="EnterLobbyButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
@@ -67,14 +68,9 @@ text = "bob"
 [node name="NameEdit" type="LineEdit" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+placeholder_text = "name"
 
 [node name="ChangeNameButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Change name"
-
-[node name="Button" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
-layout_mode = 2
-text = "test"
-
-[connection signal="button_down" from="PanelContainer/CenterContainer/HBoxContainer/InputsContainer/Button" to="." method="_on_button_button_down"]
