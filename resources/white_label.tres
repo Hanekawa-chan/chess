@@ -1,8 +1,8 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cw3drfn4oacpp"]
 
-[sub_resource type="SystemFont" id="SystemFont_lnu2h"]
+[ext_resource type="FontFile" uid="uid://dbfs4pdead1pt" path="res://fonts/Roboto.ttf" id="1_t6fbf"]
 
 [resource]
 line_spacing = 0.0
-font = SubResource("SystemFont_lnu2h")
+font = ExtResource("1_t6fbf")
 font_size = 19

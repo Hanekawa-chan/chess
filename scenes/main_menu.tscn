@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://eleimwoxt82l"]
+[gd_scene load_steps=4 format=3 uid="uid://eleimwoxt82l"]
 
 [ext_resource type="Script" uid="uid://drkhx8i2irja0" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://ypahfs73bech" path="res://images/chess.png" id="2_ekxnf"]
+[ext_resource type="Theme" uid="uid://cg5lu2u1oku7e" path="res://resources/main_theme.tres" id="3_bqqt6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -40,21 +41,25 @@ layout_mode = 2
 [node name="CreateLobbyButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "Create Lobby"
 
 [node name="AddressEdit" type="LineEdit" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 placeholder_text = "address"
 
 [node name="EnterLobbyButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "Enter Lobby"
 
 [node name="ExitButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "Exit"
 
 [node name="InputsContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/HBoxContainer"]
@@ -63,14 +68,17 @@ layout_mode = 2
 [node name="CurrentName" type="Label" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "bob"
 
 [node name="NameEdit" type="LineEdit" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 placeholder_text = "name"
 
 [node name="ChangeNameButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/InputsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "Change name"

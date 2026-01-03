@@ -13,6 +13,7 @@ const LOBBY = preload("uid://8cvj5dv8dxvs")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_window().mode = Window.MODE_MAXIMIZED
 	exit_button.button_down.connect(_exit)
 	enter_lobby_button.button_down.connect(_enter_lobby)
 	create_lobby_button.button_down.connect(_create_lobby)

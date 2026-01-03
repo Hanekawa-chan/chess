@@ -160,7 +160,7 @@ theme_override_constants/separation = 0
 [node name="LeftSide" type="MarginContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.75
+size_flags_stretch_ratio = 0.7
 
 [node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/HBoxContainer/LeftSide"]
 layout_mode = 2
@@ -217,18 +217,17 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="GridContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-columns = 3
+theme_override_constants/separation = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer"]
 texture_filter = 6
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
+size_flags_stretch_ratio = 0.05
 theme_override_constants/separation = 0
 
 [node name="First9" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
@@ -1083,8 +1082,9 @@ tile_set = SubResource("TileSet_lnu2h")
 [node name="DeadCounters" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
+size_flags_stretch_ratio = 0.17
 theme_override_constants/separation = 0
 script = ExtResource("7_u5sy4")
 
@@ -1105,6 +1105,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0"
 label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
 layout_mode = 2
@@ -1123,6 +1124,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0"
 label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
 layout_mode = 2
@@ -1161,6 +1163,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0"
 label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
 layout_mode = 2
@@ -1199,6 +1202,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0"
 label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
 layout_mode = 2
@@ -1217,6 +1221,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0"
 label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
 layout_mode = 2
@@ -1255,6 +1260,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "0"
 label_settings = ExtResource("4_p57ef")
+horizontal_alignment = 1
 
 [node name="HBoxContainer10" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
 layout_mode = 2

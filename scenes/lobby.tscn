@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://8cvj5dv8dxvs"]
+[gd_scene load_steps=3 format=3 uid="uid://8cvj5dv8dxvs"]
 
 [ext_resource type="Script" uid="uid://ld6c5khao57o" path="res://scripts/lobby.gd" id="1_o1atq"]
+[ext_resource type="Theme" uid="uid://cg5lu2u1oku7e" path="res://resources/main_theme.tres" id="2_5gu6x"]
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -32,11 +33,13 @@ layout_mode = 2
 [node name="StartGameButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_5gu6x")
 text = "Start Game"
 
 [node name="ExitButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_5gu6x")
 text = "Exit"
 
 [node name="PlayerList" type="VBoxContainer" parent="PanelContainer/CenterContainer/HBoxContainer"]
@@ -45,7 +48,9 @@ layout_mode = 2
 [node name="HostName" type="Label" parent="PanelContainer/CenterContainer/HBoxContainer/PlayerList"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_5gu6x")
 
 [node name="ClientName" type="Label" parent="PanelContainer/CenterContainer/HBoxContainer/PlayerList"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_5gu6x")

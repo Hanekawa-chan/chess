@@ -1,8 +1,9 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c42jp88t0btft"]
 
-[sub_resource type="SystemFont" id="SystemFont_ssnfk"]
+[ext_resource type="FontFile" uid="uid://dbfs4pdead1pt" path="res://fonts/Roboto.ttf" id="1_7m422"]
 
 [resource]
 line_spacing = 0.0
-font = SubResource("SystemFont_ssnfk")
+font = ExtResource("1_7m422")
+font_size = 19
 font_color = Color(0, 0, 0, 1)
