@@ -1,4 +1,4 @@
-extends AudioStreamPlayer
+class_name ButtonAudioPlayer extends AudioStreamPlayer
 
 func play_normal():
 	pitch_scale = 1

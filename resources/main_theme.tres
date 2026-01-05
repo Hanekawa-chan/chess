@@ -1,7 +1,15 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cg5lu2u1oku7e"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cg5lu2u1oku7e"]
 
 [ext_resource type="FontFile" uid="uid://dbfs4pdead1pt" path="res://fonts/Roboto.ttf" id="1_ols5k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ols5k"]
+bg_color = Color(0.32544088, 0.3254409, 0.32544076, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biaja"]
+bg_color = Color(0.8732984, 0.8732984, 0.8732984, 1)
 
 [resource]
 default_base_scale = 1.0
 default_font = ExtResource("1_ols5k")
+Label/styles/normal = SubResource("StyleBoxFlat_ols5k")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_biaja")

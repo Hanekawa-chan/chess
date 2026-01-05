@@ -7,6 +7,7 @@ extends Control
 @onready var current_name = %CurrentName
 @onready var name_edit = %NameEdit
 @onready var change_name_button = %ChangeNameButton
+@onready var options_button = %OptionsButton
 @onready var button_audio_player = Core.button_audio_player
 const BUTTON_PRESS = preload("uid://dnr6ia0n4goas")
 const LOBBY = preload("uid://8cvj5dv8dxvs")
@@ -19,6 +20,7 @@ func _ready():
 	create_lobby_button.button_down.connect(_create_lobby)
 	change_name_button.button_down.connect(_change_name)
 	address_edit.text_changed.connect(_change_address)
+	options_button.pressed.connect(_open_options)
 	
 func _change_address(address):
 	MultiplayerManager.server_ip = address
@@ -42,3 +44,9 @@ func _create_lobby():
 	button_audio_player.play()
 	MultiplayerManager.become_host()
 	get_tree().change_scene_to_file(LOBBY.resource_path)
+	
+func _open_options():
+	Options.open(_switch_visible)
+
+func _switch_visible():
+	self.visible = !self.visible

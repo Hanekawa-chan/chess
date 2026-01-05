@@ -1,9 +1,10 @@
-[gd_scene load_steps=36 format=4 uid="uid://bv8trog1nw6qp"]
+[gd_scene load_steps=37 format=4 uid="uid://bv8trog1nw6qp"]
 
 [ext_resource type="Texture2D" uid="uid://cl55bw3rvlgli" path="res://images/tileset.png" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cw3ao23ynvpem" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://cnxwsbc3ugu3c" path="res://scripts/tile.gd" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://cio0ren5mxxpa" path="res://scripts/choosable_piece.gd" id="3_lbhrr"]
+[ext_resource type="Theme" uid="uid://b3lmlwrm3bp1j" path="res://resources/game_theme.tres" id="4_0tnpc"]
 [ext_resource type="LabelSettings" uid="uid://cw3drfn4oacpp" path="res://resources/white_label.tres" id="4_p57ef"]
 [ext_resource type="LabelSettings" uid="uid://c42jp88t0btft" path="res://resources/black_label.tres" id="5_u5sy4"]
 [ext_resource type="Script" uid="uid://qdecf7plwe6r" path="res://scripts/dead_counters.gd" id="7_u5sy4"]
@@ -208,6 +209,7 @@ piece = 5
 [node name="Center" type="MarginContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_0tnpc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center"]
 layout_mode = 2
@@ -216,6 +218,7 @@ theme_override_constants/separation = 0
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -253,6 +256,7 @@ offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "8"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -275,6 +279,7 @@ offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "7"
 label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
@@ -297,6 +302,7 @@ offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "6"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -319,6 +325,7 @@ offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "5"
 label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
@@ -341,6 +348,7 @@ offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "4"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -363,6 +371,7 @@ offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "3"
 label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
@@ -385,6 +394,7 @@ offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "2"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -407,6 +417,7 @@ offset_bottom = -6.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "1"
 label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
@@ -442,6 +453,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "a"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -465,6 +477,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "b"
 label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
@@ -488,6 +501,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "c"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -511,6 +525,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "d"
 label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
@@ -534,6 +549,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "e"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -557,6 +573,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "f"
 label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
@@ -580,6 +597,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "g"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -603,6 +621,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 text = "h"
 label_settings = ExtResource("5_u5sy4")
 horizontal_alignment = 1
@@ -1085,6 +1104,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.17
+theme = ExtResource("4_0tnpc")
 theme_override_constants/separation = 0
 script = ExtResource("7_u5sy4")
 
@@ -1103,6 +1123,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1122,6 +1143,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1141,6 +1163,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1161,6 +1184,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1180,6 +1204,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1200,6 +1225,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1219,6 +1245,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1238,6 +1265,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1258,6 +1286,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1277,6 +1306,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
@@ -1286,6 +1316,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.4
+theme = ExtResource("4_0tnpc")
 script = ExtResource("8_gee14")
 
 [node name="VBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer2"]
@@ -1294,18 +1325,22 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_0tnpc")
 
 [node name="FirstPlayerName" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer2/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_0tnpc")
 text = "[player name] playing as [side]"
 autowrap_mode = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_0tnpc")
 
 [node name="SecondPlayerName" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer2/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("4_0tnpc")
 text = "[player name] playing as [side]"
 autowrap_mode = 3
 
