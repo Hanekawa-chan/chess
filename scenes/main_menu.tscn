@@ -71,27 +71,6 @@ layout_mode = 2
 theme = ExtResource("3_bqqt6")
 text = "Exit"
 
-[node name="InputsContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="CurrentName" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer/InputsContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("3_bqqt6")
-text = "bob"
-
-[node name="NameEdit" type="LineEdit" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer/InputsContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("3_bqqt6")
-placeholder_text = "name"
-
-[node name="ChangeNameButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer/InputsContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("3_bqqt6")
-text = "Change name"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -123,5 +102,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_wu84c")
 stretch_mode = 4

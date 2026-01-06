@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwkt1nkh5ea5i"]
+[gd_scene load_steps=5 format=3 uid="uid://bwkt1nkh5ea5i"]
 
 [ext_resource type="Script" uid="uid://ckc0og1t2p36" path="res://scripts/options.gd" id="1_c2u1v"]
+[ext_resource type="Theme" uid="uid://cg5lu2u1oku7e" path="res://resources/main_theme.tres" id="2_2iy26"]
 [ext_resource type="Texture2D" uid="uid://chly88fqgbuss" path="res://images/close.png" id="2_yjkok"]
+[ext_resource type="Texture2D" uid="uid://ddyfh3llu52ba" path="res://images/checkmark.png" id="3_kv8mn"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -156,6 +158,32 @@ text = "Misc"
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
 layout_mode = 2
 
+[node name="ScreenModeContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="InputsContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer/ScreenModeContainer"]
+layout_mode = 2
+
+[node name="CurrentName" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_2iy26")
+text = "bob"
+
+[node name="NameEdit" type="LineEdit" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_2iy26")
+placeholder_text = "name"
+
+[node name="ChangeNameButton" type="Button" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_2iy26")
+text = "Change name"
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -183,6 +211,22 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.96
 mouse_filter = 2
 
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.04
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ApplyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+z_index = 11
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_kv8mn")
+stretch_mode = 4
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -195,6 +239,7 @@ theme_override_constants/margin_bottom = 4
 [node name="CloseButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 z_index = 11
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_yjkok")
 stretch_mode = 4
 
