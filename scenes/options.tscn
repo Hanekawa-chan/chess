@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwkt1nkh5ea5i"]
+[gd_scene load_steps=6 format=3 uid="uid://bwkt1nkh5ea5i"]
 
 [ext_resource type="Script" uid="uid://ckc0og1t2p36" path="res://scripts/options.gd" id="1_c2u1v"]
+[ext_resource type="Script" uid="uid://dw4a7q7dp1pl1" path="res://scripts/screen_mode_picker_fixer.gd" id="2_1sggn"]
 [ext_resource type="Theme" uid="uid://cg5lu2u1oku7e" path="res://resources/main_theme.tres" id="2_2iy26"]
 [ext_resource type="Texture2D" uid="uid://chly88fqgbuss" path="res://images/close.png" id="2_yjkok"]
 [ext_resource type="Texture2D" uid="uid://ddyfh3llu52ba" path="res://images/checkmark.png" id="3_kv8mn"]
@@ -126,6 +127,7 @@ layout_mode = 2
 text = "Screen mode"
 
 [node name="ScreenModePicker" type="OptionButton" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/ScreenModeContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 selected = 0
 item_count = 4
@@ -137,6 +139,7 @@ popup/item_2/text = "fullscreen"
 popup/item_2/id = 3
 popup/item_3/text = "exclusive fullscreen"
 popup/item_3/id = 4
+script = ExtResource("2_1sggn")
 
 [node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2

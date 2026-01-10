@@ -226,7 +226,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer"]
-texture_filter = 6
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -234,18 +234,21 @@ size_flags_stretch_ratio = 0.05
 theme_override_constants/separation = 0
 
 [node name="First9" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_vtaks")
 expand_mode = 2
 
 [node name="First" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_kvpfn")
 expand_mode = 2
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -263,12 +266,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First2" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_vtaks")
 expand_mode = 2
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First2"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -286,12 +291,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First3" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_kvpfn")
 expand_mode = 2
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First3"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -309,12 +316,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First4" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_dinhu")
 expand_mode = 2
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First4"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -332,12 +341,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First5" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_kvuet")
 expand_mode = 2
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First5"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -355,12 +366,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First6" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_trtic")
 expand_mode = 2
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First6"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -378,12 +391,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First7" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_ir15t")
 expand_mode = 2
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First7"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -401,12 +416,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First8" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("AtlasTexture_ca42v")
 expand_mode = 2
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/First8"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -424,18 +441,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.05
 theme_override_constants/separation = 0
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
-texture_filter = 6
+texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="First" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -444,6 +464,7 @@ expand_mode = 4
 stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -460,6 +481,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First2" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -484,6 +506,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First3" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -492,6 +515,7 @@ expand_mode = 4
 stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First3"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -508,6 +532,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First4" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -532,6 +557,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First5" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -556,6 +582,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First6" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -564,6 +591,7 @@ expand_mode = 4
 stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First6"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -580,6 +608,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First7" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -588,6 +617,7 @@ expand_mode = 4
 stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First7"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -604,6 +634,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="First8" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -612,6 +643,7 @@ expand_mode = 4
 stretch_mode = 4
 
 [node name="Label1" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/First8"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -646,6 +678,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="01" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -653,6 +686,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="02" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -660,6 +694,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="03" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -667,6 +702,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="04" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -674,6 +710,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="05" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -681,6 +718,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="06" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -688,6 +726,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="07" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -695,6 +734,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="10" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -702,6 +742,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="11" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -709,6 +750,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="12" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -716,6 +758,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="13" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -723,6 +766,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="14" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -730,6 +774,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="15" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -737,6 +782,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="16" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -744,6 +790,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="17" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -751,6 +798,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="20" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -758,6 +806,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="21" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -765,6 +814,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="22" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -772,6 +822,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="23" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -779,6 +830,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="24" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -786,6 +838,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="25" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -793,6 +846,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="26" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -800,6 +854,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="27" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -807,6 +862,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="30" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -814,6 +870,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="31" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -821,6 +878,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="32" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -828,6 +886,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="33" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -835,6 +894,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="34" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -842,6 +902,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="35" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -849,6 +910,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="36" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -856,6 +918,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="37" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -863,6 +926,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="40" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -870,6 +934,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="41" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -877,6 +942,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="42" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -884,6 +950,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="43" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -891,6 +958,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="44" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -898,6 +966,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="45" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -905,6 +974,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="46" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -912,6 +982,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="47" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -919,6 +990,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="50" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -926,6 +998,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="51" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -933,6 +1006,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="52" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -940,6 +1014,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="53" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -947,6 +1022,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="54" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -954,6 +1030,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="55" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -961,6 +1038,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="56" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -968,6 +1046,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="57" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -975,6 +1054,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="60" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -982,6 +1062,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="61" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -989,6 +1070,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="62" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -996,6 +1078,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="63" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1003,6 +1086,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="64" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1010,6 +1094,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="65" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1017,6 +1102,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="66" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1024,6 +1110,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="67" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1031,6 +1118,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="70" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1038,6 +1126,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="71" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1045,6 +1134,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="72" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1052,6 +1142,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="73" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1059,6 +1150,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="74" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1066,6 +1158,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="75" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1073,6 +1166,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="76" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1080,6 +1174,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="77" type="Button" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer/ChessGrid"]
@@ -1087,6 +1182,7 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_0tnpc")
 script = ExtResource("2_lnu2h")
 
 [node name="Board" type="TileMapLayer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
@@ -1108,17 +1204,24 @@ theme = ExtResource("4_0tnpc")
 theme_override_constants/separation = 0
 script = ExtResource("7_u5sy4")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_5newe")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="WhitePawnCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer"]
+[node name="WhitePawnCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1128,17 +1231,17 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_bt5mj")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="WhiteKnightCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer3"]
+[node name="WhiteKnightCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1148,17 +1251,17 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer4"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_e1j6l")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="WhiteBishopCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer4"]
+[node name="WhiteBishopCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer4"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1169,17 +1272,17 @@ label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_37s47")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="WhiteRookCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer2"]
+[node name="WhiteRookCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1189,17 +1292,17 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer6"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_pl11u")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="WhiteQueenCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer6"]
+[node name="WhiteQueenCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer6"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1210,17 +1313,25 @@ label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer5"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_bhx41")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="BlackPawnCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer5"]
+[node name="BlackPawnCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer5"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1230,17 +1341,18 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer7"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer7"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_qnb83")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="BlackKnightCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer7"]
+[node name="BlackKnightCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer7"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1250,17 +1362,18 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 9
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer8"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer8"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_sww3w")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="BlackBishopCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer8"]
+[node name="BlackBishopCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer8"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1271,17 +1384,18 @@ label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="HBoxContainer9" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 9
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer9"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer9"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_suyxu")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="BlackRookCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer9"]
+[node name="BlackRookCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer9"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1291,17 +1405,18 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 
-[node name="HBoxContainer10" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
+[node name="HBoxContainer10" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer10"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer10"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_sgl2t")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="BlackQueenCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/HBoxContainer10"]
+[node name="BlackQueenCounter" type="Label" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer10"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://eleimwoxt82l"]
+[gd_scene load_steps=7 format=3 uid="uid://eleimwoxt82l"]
 
 [ext_resource type="Script" uid="uid://drkhx8i2irja0" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://ypahfs73bech" path="res://images/chess.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://cl55bw3rvlgli" path="res://images/tileset.png" id="2_wu84c"]
 [ext_resource type="Theme" uid="uid://cg5lu2u1oku7e" path="res://resources/main_theme.tres" id="3_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://s5v8nty5ltjc" path="res://images/options.png" id="4_wu84c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("2_wu84c")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtw2f"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -29,47 +35,101 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/HBoxContainer"]
+[node name="CenterContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer"]
 layout_mode = 2
 
-[node name="MiscContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer"]
+[node name="ReferenceRect" type="HBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="CenterContainer2" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/ReferenceRect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/ReferenceRect"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/ReferenceRect/VBoxContainer"]
 layout_mode = 2
 
-[node name="GameIcon" type="TextureRect" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer/MiscContainer"]
-custom_minimum_size = Vector2(128, 128)
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/ReferenceRect/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_ekxnf")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8ln24")
+stretch_mode = 5
 
-[node name="MenuButtons" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/ReferenceRect/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rtw2f")
+text = "Chess by SM"
+horizontal_alignment = 1
 
-[node name="CreateLobbyButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer/MenuButtons"]
+[node name="CenterContainer" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/ReferenceRect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="TextureRect" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="MenuButtons" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="CreateLobbyButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_bqqt6")
 text = "Create Lobby"
 
-[node name="AddressEdit" type="LineEdit" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer/MenuButtons"]
+[node name="AddressEdit" type="LineEdit" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_bqqt6")
 placeholder_text = "address"
 
-[node name="EnterLobbyButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer/MenuButtons"]
+[node name="EnterLobbyButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_bqqt6")
 text = "Enter Lobby"
 
-[node name="ExitButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/HBoxContainer/MenuButtons"]
+[node name="ExitButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/MenuButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_bqqt6")
 text = "Exit"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2

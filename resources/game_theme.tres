@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://b3lmlwrm3bp1j"]
 
-[ext_resource type="FontFile" uid="uid://dbfs4pdead1pt" path="res://fonts/Roboto.ttf" id="1_ntlge"]
+[ext_resource type="FontFile" uid="uid://kug4rb3kq1qi" path="res://fonts/Jersey.ttf" id="1_ntlge"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntlge"]
 

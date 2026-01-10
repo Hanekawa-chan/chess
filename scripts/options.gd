@@ -36,6 +36,7 @@ func _set_mode():
 	screen_mode_picker.select(screen_mode_picker.get_item_index(get_window().mode))
 
 func _screen_mode_selected(_screen_mode):
+	button_audio_player.play_normal()
 	get_window().mode = screen_mode_picker.get_item_id(_screen_mode)
 
 func _on_background_slider_change(value):

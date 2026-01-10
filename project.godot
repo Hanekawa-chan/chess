@@ -27,6 +27,7 @@ Options="*res://scenes/options.tscn"
 window/size/viewport_width=960
 window/size/viewport_height=480
 window/stretch/mode="canvas_items"
+window/stretch/scale=1.2
 
 [dotnet]
 
@@ -44,3 +45,4 @@ theme/custom="uid://cg5lu2u1oku7e"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
