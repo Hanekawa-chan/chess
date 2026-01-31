@@ -20,6 +20,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
+[node name="BoardLogic" type="Node" parent="."]
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -145,7 +147,6 @@ size_flags_stretch_ratio = 0.85
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.15
-theme_override_constants/margin_right = 15
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -157,11 +158,34 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="OptionsButton" type="TextureButton" parent="PanelContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.23
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="OptionsButton" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_wu84c")
-stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/OptionsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/OptionsButton/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_wu84c")
+stretch_mode = 5

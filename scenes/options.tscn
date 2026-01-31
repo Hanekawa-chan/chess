@@ -148,40 +148,41 @@ theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 60
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer3"]
+[node name="MiscContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/MiscContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/PanelContainer"]
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer3/MiscContainer/PanelContainer"]
 layout_mode = 2
 text = "Misc"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/MiscContainer"]
 layout_mode = 2
 
-[node name="ScreenModeContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer"]
+[node name="ScreenModeContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/MiscContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 4
 
-[node name="InputsContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer/ScreenModeContainer"]
+[node name="InputsContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer3/MiscContainer/VBoxContainer/ScreenModeContainer"]
 layout_mode = 2
 
-[node name="CurrentName" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
+[node name="CurrentName" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer3/MiscContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_2iy26")
 text = "bob"
 
-[node name="NameEdit" type="LineEdit" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
+[node name="NameEdit" type="LineEdit" parent="PanelContainer/HBoxContainer/MarginContainer3/MiscContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_2iy26")
 placeholder_text = "name"
 
-[node name="ChangeNameButton" type="Button" parent="PanelContainer/HBoxContainer/MarginContainer3/VBoxContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
+[node name="ChangeNameButton" type="Button" parent="PanelContainer/HBoxContainer/MarginContainer3/MiscContainer/VBoxContainer/ScreenModeContainer/InputsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_2iy26")
@@ -206,12 +207,28 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.08
 mouse_filter = 2
+theme_override_constants/separation = 0
 alignment = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.16
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ReturnButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3"]
+z_index = 11
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Return to main menu"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.96
+size_flags_stretch_ratio = 0.84
 mouse_filter = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -223,12 +240,27 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="ApplyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="ApplyButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
 z_index = 11
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("3_kv8mn")
-stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/ApplyButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/ApplyButton/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_kv8mn")
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -239,12 +271,27 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="CloseButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 z_index = 11
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("2_yjkok")
-stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/CloseButton/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_yjkok")
+stretch_mode = 5
 
 [node name="ReferenceRect" type="ReferenceRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

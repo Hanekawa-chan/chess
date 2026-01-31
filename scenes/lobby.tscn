@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://8cvj5dv8dxvs"]
+[gd_scene load_steps=4 format=3 uid="uid://8cvj5dv8dxvs"]
 
 [ext_resource type="Script" uid="uid://ld6c5khao57o" path="res://scripts/lobby.gd" id="1_o1atq"]
 [ext_resource type="Theme" uid="uid://cg5lu2u1oku7e" path="res://resources/main_theme.tres" id="2_5gu6x"]
+[ext_resource type="Texture2D" uid="uid://s5v8nty5ltjc" path="res://images/options.png" id="3_q60fs"]
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -20,37 +21,123 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer"]
+[node name="ReferenceRect" type="ReferenceRect" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="MenuContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/HBoxContainer"]
+[node name="CenterContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.33
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.33
+
+[node name="ReferenceRect" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="MenuContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
 
-[node name="StartGameButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuContainer"]
+[node name="StartGameButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_5gu6x")
 text = "Start Game"
 
-[node name="ExitButton" type="Button" parent="PanelContainer/CenterContainer/HBoxContainer/MenuContainer"]
+[node name="ExitButton" type="Button" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/MenuContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_5gu6x")
 text = "Exit"
 
-[node name="PlayerList" type="VBoxContainer" parent="PanelContainer/CenterContainer/HBoxContainer"]
+[node name="PlayerList" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
 
-[node name="HostName" type="Label" parent="PanelContainer/CenterContainer/HBoxContainer/PlayerList"]
+[node name="HostName" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/PlayerList"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_5gu6x")
 
-[node name="ClientName" type="Label" parent="PanelContainer/CenterContainer/HBoxContainer/PlayerList"]
+[node name="ClientName" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/PlayerList"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_5gu6x")
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.33
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.85
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+theme_override_constants/separation = 0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.23
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="OptionsButton" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/OptionsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/OptionsButton/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_q60fs")
+stretch_mode = 5

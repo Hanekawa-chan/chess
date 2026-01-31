@@ -10,9 +10,11 @@ extends Control
 @onready var current_name = %CurrentName
 @onready var name_edit = %NameEdit
 @onready var change_name_button = %ChangeNameButton
+@onready var misc_container = %MiscContainer
 #UI
-@onready var close_button: TextureButton = $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/CloseButton
-@onready var apply_button: TextureButton = $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/ApplyButton
+@onready var return_button: Button = $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/ReturnButton
+@onready var close_button: Button = $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/CloseButton
+@onready var apply_button: Button = $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/ApplyButton
 
 var close_func
 var options: OptionsResource
@@ -23,6 +25,7 @@ var save_path = "user://options.tres"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_load_options()
+	return_button.pressed.connect(_return_to_main_menu)
 	close_button.pressed.connect(_close_options)
 	apply_button.pressed.connect(_apply_options)
 	change_name_button.button_down.connect(_change_name)
@@ -31,6 +34,14 @@ func _ready():
 	test_button.pressed.connect(_test_sound)
 	screen_mode_picker.item_selected.connect(_screen_mode_selected)
 	get_window().size_changed.connect(_set_mode)
+
+func set_misc_state(scene: MultiplayerManager.Scenes):
+	if scene == MultiplayerManager.Scenes.MainMenu:
+		misc_container.visible = true
+		return_button.visible = false
+	else:
+		misc_container.visible = false
+		return_button.visible = true
 	
 func _set_mode():
 	screen_mode_picker.select(screen_mode_picker.get_item_index(get_window().mode))
@@ -52,13 +63,23 @@ func _change_name():
 		MultiplayerManager.player_name = val
 		current_name.text = val
 
+func _return_to_main_menu():
+	_close_options()
+	_exit()
+
+func _exit():
+	button_audio_player.play()
+	multiplayer.multiplayer_peer = null
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	MultiplayerManager.current_scene = MultiplayerManager.Scenes.MainMenu
+
 func _close_options():
 	button_audio_player.play_normal()
 	close_func.call()
 	close_func = null
 	self.visible = false
 	self.top_level = false
-	
+
 func open(_close_func):
 	button_audio_player.play_normal()
 	close_func = _close_func
@@ -98,7 +119,8 @@ func _apply_options():
 	options.background_volume = background_slider.value
 	options.game_volume = game_slider.value
 	options.screen_mode = get_window().mode
-	options.player_name = name_edit.text
+	if MultiplayerManager.current_scene == MultiplayerManager.Scenes.MainMenu:
+		options.player_name = name_edit.text
 	_save_options()
 
 func _save_options():

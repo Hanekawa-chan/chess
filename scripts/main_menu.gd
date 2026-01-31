@@ -33,6 +33,7 @@ func _create_lobby():
 	button_audio_player.play()
 	MultiplayerManager.become_host()
 	get_tree().change_scene_to_file(LOBBY.resource_path)
+	MultiplayerManager.current_scene = MultiplayerManager.Scenes.Lobby
 	
 func _open_options():
 	Options.open(_switch_visible)

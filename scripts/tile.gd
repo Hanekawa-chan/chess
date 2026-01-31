@@ -33,6 +33,8 @@ var piece: Piece = null:
 			if value.figure == Game.Pieces.Pawn && ((place.y==0 && value.color == Game.Side.White) || (place.y==7 && value.color == Game.Side.Black)):
 				print("pawn can be changed to other figures")
 				game.pawn_to_transfigure = value
+				if MultiplayerManager.player_side == game.current_side:
+					game.choosable_pieces.visible = true
 
 @export
 var place: Vector2i
@@ -72,7 +74,7 @@ func set_active_piece(piece_place: Vector2i):
 	print("did it happen? set_active_piece ", MultiplayerManager.player_name)
 	var _piece: Piece = null
 	if piece_place != Vector2i(-1,-1):
-		_piece = game.find_tile_by_position(game.chess_grid.get_children(), piece_place).piece
+		_piece = BoardLogic.find_tile_by_position(game.chess_grid.get_children(), piece_place).piece
 	game.active_piece = _piece
 
 @rpc("any_peer", "call_local")
@@ -80,7 +82,7 @@ func set_piece(piece_place: Vector2i):
 	print("did it happen? set_piece ", MultiplayerManager.player_name)
 	var _piece: Piece = null
 	if piece_place != Vector2i(-1,-1):
-		_piece = game.find_tile_by_position(game.chess_grid.get_children(), piece_place).piece
+		_piece = BoardLogic.find_tile_by_position(game.chess_grid.get_children(), piece_place).piece
 	piece = _piece
 
 @rpc("any_peer", "call_local")
@@ -89,6 +91,8 @@ func set_dead_count(color, figure):
 	game.dead_counters.set_count(color, figure)
 
 func _on_button_up():
+	if game.ended:
+		return
 	print("player side ", MultiplayerManager.player_side)
 	print("current side ", game.current_side)
 	if game.current_side == MultiplayerManager.player_side && game.pawn_to_transfigure == null:
@@ -143,12 +147,12 @@ func _on_button_up():
 							for t in game.chess_grid.get_children():
 								if place.x == 2:
 									if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 0:
-										var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(3, active_piece.place.y))
+										var rook_place = BoardLogic.find_tile_by_position(game.chess_grid.get_children(), Vector2i(3, active_piece.place.y))
 										rook_place._set_piece(t.piece)
 										break
 								if place.x == 6:
 									if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 7:
-										var rook_place = game.find_tile_by_position(game.chess_grid.get_children(), Vector2i(5, active_piece.place.y))
+										var rook_place = BoardLogic.find_tile_by_position(game.chess_grid.get_children(), Vector2i(5, active_piece.place.y))
 										rook_place._set_piece(t.piece)
 										break
 						if active_piece.figure == Game.Pieces.Pawn:

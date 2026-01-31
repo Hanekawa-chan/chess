@@ -16,6 +16,16 @@ var client_name = "bob"
 var host_side = Game.Side.White
 var client_side = Game.Side.Black
 var player_side = Game.Side.White
+var current_scene = Scenes.MainMenu:
+	set(value):
+		Options.set_misc_state(value)
+		current_scene = value
+
+enum Scenes {
+	MainMenu,
+	Lobby,
+	Main
+}
 
 func _ready():
 	multiplayer.allow_object_decoding = true
@@ -63,6 +73,7 @@ func join():
 func _return_to_main_menu():
 	print("returning to main menu")
 	get_tree().change_scene_to_file(MAIN_MENU.resource_path)
+	current_scene = Scenes.MainMenu
 	
 func _force_return_to_main_menu():
 	_return_to_main_menu()
@@ -86,11 +97,13 @@ func _delete_player(id: int):
 	client_name_changed.emit("")
 	if get_tree().current_scene.name == "Game":
 		get_tree().change_scene_to_file(LOBBY.resource_path)
+		current_scene = Scenes.Lobby
 
 @rpc("any_peer", "call_remote", "reliable")
 func switch_scene():
 	print("switch scene", " peer ", multiplayer.get_unique_id())
 	get_tree().change_scene_to_file(LOBBY.resource_path)
+	current_scene = Scenes.Lobby
 
 @rpc("any_peer", "call_local", "reliable")
 func set_host_name(_name: String):

@@ -5,6 +5,7 @@ extends Control
 @onready var menu_container = %MenuContainer
 @onready var host_name = %HostName
 @onready var client_name = %ClientName
+@onready var options_button = %OptionsButton
 @onready var button_audio_player = Core.button_audio_player
 const BUTTON_PRESS = preload("uid://dnr6ia0n4goas")
 
@@ -14,6 +15,7 @@ func _ready():
 	MultiplayerManager.host_name_changed.connect(_host_name_changed)
 	exit_button.button_down.connect(_exit)
 	start_game_button.button_down.connect(_start)
+	options_button.pressed.connect(_open_options)
 	if not multiplayer.is_server():
 		start_game_button.visible = false
 		print("setting client name ", MultiplayerManager.player_name)
@@ -22,6 +24,12 @@ func _ready():
 		MultiplayerManager.set_host_name.rpc(MultiplayerManager.player_name)
 		MultiplayerManager.players_count_changed.connect(_switch_start_game_button)
 		start_game_button.disabled = true
+		
+func _open_options():
+	Options.open(_switch_visible)
+
+func _switch_visible():
+	self.visible = !self.visible
 	
 func _client_name_changed(_name: String):
 	print("on client name changed name:", _name, " server: ", multiplayer.is_server())
@@ -36,6 +44,7 @@ func _exit():
 	button_audio_player.play()
 	multiplayer.multiplayer_peer = null
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	MultiplayerManager.current_scene = MultiplayerManager.Scenes.MainMenu
 	
 func _start():
 	button_audio_player.play()
@@ -45,6 +54,8 @@ func _start():
 @rpc("any_peer", "call_local")
 func start_game():
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	MultiplayerManager.current_scene = MultiplayerManager.Scenes.Main
+
 	
 func _switch_start_game_button(count: int):
 	print("count changed ", count)
@@ -53,7 +64,6 @@ func _switch_start_game_button(count: int):
 		start_game_button.disabled = false
 	else:
 		start_game_button.disabled = true
-
 
 func _on_button_button_down():
 	print("peers:", multiplayer.get_peers())

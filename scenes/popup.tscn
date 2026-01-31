@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://do73jy4lr3k5b" path="res://scripts/popup.gd" id="1_4ebxx"]
 
 [node name="PopupPanel" type="PopupPanel"]
+oversampling_override = 1.0
 size = Vector2i(111, 66)
 visible = true
 script = ExtResource("1_4ebxx")
@@ -13,8 +14,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 107.0
-offset_bottom = 62.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
