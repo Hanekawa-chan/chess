@@ -5,6 +5,8 @@ class_name Game extends Control
 @onready var choosable_pieces = %ChoosablePieces
 @onready var move_number_label = %MoveNumberLabel
 @onready var current_side_label = %CurrentSideLabel
+@onready var first_player_history: RichTextLabel = %FirstPlayerHistory
+@onready var second_player_history: RichTextLabel = %SecondPlayerHistory
 @onready var options_button = %OptionsButton
 @onready var board = %Board
 @onready var pieces = %Pieces
@@ -48,6 +50,7 @@ var active_piece: Piece = null:
 				board.set_cell(t.place, 0, Vector2i(old_tile.x, old_tile.y-2))
 		print("new active piece ", value, " old place ", old_place)
 var pawn_to_transfigure: Piece = null
+var last_move: Move = null
 
 var white_piece_tiles_array = [
 	Vector2i(0,0),
@@ -120,6 +123,10 @@ enum Tiles {
 	ActiveBlack
 }
 
+@rpc("any_peer", "call_local")
+func set_last_move(move: Move):
+	last_move = move
+
 func _set_scale():
 	var _scale = chess_grid.size.x/8/16
 	print("size ", chess_grid.size, "scale ", _scale)
@@ -149,6 +156,8 @@ func _switch_visible():
 	
 @rpc("any_peer", "call_local")
 func pawn_to_figure(figure: Pieces):
+	last_move.converted = true
+	last_move.second_piece = figure
 	pawn_to_transfigure.change_figure_on_grid(figure)
 	pawn_to_transfigure = null
 	new_round(Vector2i(-1,-1))
@@ -159,7 +168,7 @@ func new_round(_pawn: Vector2i):
 	move_number += 1
 	var fake_grid = BoardLogic.copy_chess_grid(chess_grid.get_children())
 	var pawn: ChessTile
-	if _pawn == Vector2i(-1,-1):
+	if _pawn.x == -1:
 		pawn = null
 	else:
 		pawn = BoardLogic.find_tile_by_position(chess_grid.get_children(), _pawn)
@@ -167,11 +176,24 @@ func new_round(_pawn: Vector2i):
 	var has_moves =  BoardLogic.reduce_moves(fake_grid, current_side)
 	has_moves = BoardLogic.castle_moves(fake_grid, current_side, has_moves)
 	has_moves = BoardLogic.enpassant(pawn, fake_grid, current_side, has_moves)
+	var killers = BoardLogic.get_king_killers(current_side, fake_grid)
+	if len(killers) > 0:
+		last_move.check_mate = History.CheckMate.Check
 	if has_moves:
 		BoardLogic.realize_moves(fake_grid, chess_grid)
 	else:
 		BoardLogic.lose(current_side)
 		ended = true
+		last_move.check_mate = History.CheckMate.Mate
+	if pawn == null:
+		if last_move.player_place != 0:
+			add_to_history.rpc(last_move.old, last_move.new, last_move.piece, last_move.second_piece, last_move.converted, last_move.castling_type, last_move.check_mate, last_move.player_place)
+		last_move = null
+	choosable_pieces.visible = false
+
+@rpc("any_peer","call_local")
+func add_to_history(old, new: Vector2i, piece, second_piece: Pieces, converted: bool, castling_type: History.CastlingType, check_mate: History.CheckMate, player_place: int):
+	History.add_move(old, new, piece, second_piece, converted, castling_type, check_mate, player_place, first_player_history, second_player_history)
 
 func get_end_test_initial_board():
 	var _board = [

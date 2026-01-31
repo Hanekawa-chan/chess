@@ -93,8 +93,13 @@ func set_dead_count(color, figure):
 func _on_button_up():
 	if game.ended:
 		return
+	var move = Move.new()
 	print("player side ", MultiplayerManager.player_side)
 	print("current side ", game.current_side)
+	if multiplayer.is_server():
+		move.player_place = 1
+	else:
+		move.player_place = 2
 	if game.current_side == MultiplayerManager.player_side && game.pawn_to_transfigure == null:
 		if piece != null:
 			if (game.active_piece == null && MultiplayerManager.player_side == piece.color) || (game.active_piece != null && MultiplayerManager.player_side != piece.color):
@@ -108,7 +113,12 @@ func _on_button_up():
 						_set_active_piece(null)
 						for pos in active_piece.tile.movable_places:
 							if pos.place == place:
-								# PIECE MOVES
+								# PIECE KILLS
+								move.old = active_piece.place
+								move.piece = active_piece.figure
+								move.new = place
+								move.second_piece = piece.figure
+								game.set_last_move.rpc(move)
 								set_dead_count.rpc(piece.color, piece.figure)
 								#print("active", active_piece)
 								_set_piece(active_piece)
@@ -124,6 +134,8 @@ func _on_button_up():
 			#print("clicked me! Pos:", place, " Empty")
 			var active_piece = game.active_piece
 			if active_piece != null:
+				move.old = active_piece.place
+				move.piece = active_piece.figure
 				_set_active_piece(null)
 				for pos in active_piece.tile.movable_places:
 					if pos.place == place:
@@ -132,6 +144,8 @@ func _on_button_up():
 						var is_enpassantable = false
 						if active_piece.figure == Game.Pieces.Pawn && abs(active_piece.place.y - pos.place.y) == 2:
 							is_enpassantable = true
+						move.new = place
+						game.set_last_move.rpc(move)
 						_set_piece(active_piece)
 						if is_enpassantable:
 							game.new_round.rpc(self.place)
@@ -148,11 +162,13 @@ func _on_button_up():
 								if place.x == 2:
 									if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 0:
 										var rook_place = BoardLogic.find_tile_by_position(game.chess_grid.get_children(), Vector2i(3, active_piece.place.y))
+										move.castling_type = History.CastlingType.Long
 										rook_place._set_piece(t.piece)
 										break
 								if place.x == 6:
 									if t.piece != null && t.piece.color == active_piece.color && t.piece.figure == Game.Pieces.Rook && len(t.special_moves) > 0 && t.place.x == 7:
 										var rook_place = BoardLogic.find_tile_by_position(game.chess_grid.get_children(), Vector2i(5, active_piece.place.y))
+										move.castling_type = History.CastlingType.Short
 										rook_place._set_piece(t.piece)
 										break
 						if active_piece.figure == Game.Pieces.Pawn:
@@ -160,10 +176,13 @@ func _on_button_up():
 								if t.piece != null && t.piece.figure == Game.Pieces.Pawn && t.piece.color != active_piece.color:
 									if len(t.special_moves) > 0:
 										set_dead_count.rpc(t.piece.color, t.piece.figure)
+										move.second_piece = Game.Pieces.Pawn
 										t._set_piece(null)
 										break
+						move.new = place
 						_set_piece(active_piece)
 						game.new_round.rpc(Vector2i(-1,-1))
+						game.set_last_move.rpc(move)
 						break
 	else:
 		button_audio_player.play_wrong()
