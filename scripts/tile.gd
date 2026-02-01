@@ -181,8 +181,8 @@ func _on_button_up():
 										break
 						move.new = place
 						_set_piece(active_piece)
-						game.new_round.rpc(Vector2i(-1,-1))
 						game.set_last_move.rpc(move)
+						game.new_round.rpc(Vector2i(-1,-1))
 						break
 	else:
 		button_audio_player.play_wrong()

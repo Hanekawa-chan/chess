@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bv8trog1nw6qp"]
+[gd_scene load_steps=39 format=4 uid="uid://bv8trog1nw6qp"]
 
 [ext_resource type="Texture2D" uid="uid://cl55bw3rvlgli" path="res://images/tileset.png" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cw3ao23ynvpem" path="res://scripts/game.gd" id="1_yqjtg"]
@@ -9,6 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://c42jp88t0btft" path="res://resources/black_label.tres" id="5_u5sy4"]
 [ext_resource type="Script" uid="uid://qdecf7plwe6r" path="res://scripts/dead_counters.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://pv4pd0v5ou5x" path="res://scripts/player_info.gd" id="8_gee14"]
+[ext_resource type="Theme" uid="uid://cg5lu2u1oku7e" path="res://resources/main_theme.tres" id="10_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://s5v8nty5ltjc" path="res://images/options.png" id="10_vtaks"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p57ef"]
@@ -1461,6 +1462,16 @@ autowrap_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("10_kvpfn")
+text = "1
+2
+3
+4
+5
+6
+7
+8
+9"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer2/VBoxContainer"]
 layout_mode = 2

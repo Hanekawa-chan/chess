@@ -13,7 +13,7 @@ const BUTTON_PRESS = preload("uid://dnr6ia0n4goas")
 func _ready():
 	MultiplayerManager.client_name_changed.connect(_client_name_changed)
 	MultiplayerManager.host_name_changed.connect(_host_name_changed)
-	exit_button.button_down.connect(_exit)
+	exit_button.button_down.connect(Core.exit)
 	start_game_button.button_down.connect(_start)
 	options_button.pressed.connect(_open_options)
 	if not multiplayer.is_server():
@@ -33,18 +33,12 @@ func _switch_visible():
 	
 func _client_name_changed(_name: String):
 	print("on client name changed name:", _name, " server: ", multiplayer.is_server())
-	client_name.text = _name
+	client_name.text = "P2: "+_name
 	if multiplayer.is_server():
 		MultiplayerManager.set_host_name.rpc(MultiplayerManager.host_name)
 	
 func _host_name_changed(_name: String):
-	host_name.text = _name
-
-func _exit():
-	button_audio_player.play()
-	multiplayer.multiplayer_peer = null
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-	MultiplayerManager.current_scene = MultiplayerManager.Scenes.MainMenu
+	host_name.text = "P1: "+_name
 	
 func _start():
 	button_audio_player.play()
@@ -64,12 +58,3 @@ func _switch_start_game_button(count: int):
 		start_game_button.disabled = false
 	else:
 		start_game_button.disabled = true
-
-func _on_button_button_down():
-	print("peers:", multiplayer.get_peers())
-	print("unique id:", multiplayer.get_unique_id())
-	print("mp.unique_id:", multiplayer.multiplayer_peer.get_unique_id())
-	print("server:", multiplayer.is_server())
-	print("status:", multiplayer.multiplayer_peer.get_connection_status())
-	print("host text", host_name.text)
-	print("client text", client_name.text)

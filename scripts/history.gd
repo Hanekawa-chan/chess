@@ -12,7 +12,7 @@ enum CheckMate {
 	Mate
 }
 
-static func add_move(old, new: Vector2i, piece, second_piece: Game.Pieces, converted: bool, castling_type: CastlingType, check_mate: CheckMate, player_place: int, first_history, second_history: RichTextLabel):
+static func add_move(old, new: Vector2i, piece, second_piece: Game.Pieces, converted: bool, castling_type: CastlingType, check_mate: CheckMate, player_place, move_number: int, first_history, second_history: RichTextLabel):
 	if player_place == 0:
 		return
 	print("adding move old: ", old, " new: ", new, " piece: ", Game.Pieces.keys()[piece], " 2nd piece: ", Game.Pieces.keys()[second_piece], " player ", player_place)
@@ -36,11 +36,11 @@ static func add_move(old, new: Vector2i, piece, second_piece: Game.Pieces, conve
 			checkmate = "#"
 	match castling_type: 
 		CastlingType.None:
-			text_to_edit.append_text(piece_moved + old_place + take + second_piece_letter + new_place + checkmate + "\n")
+			text_to_edit.append_text(str(move_number)+". "+piece_moved + old_place + take + second_piece_letter + new_place + checkmate + "\n")
 		CastlingType.Short:
-			text_to_edit.append_text("0-0\n")
+			text_to_edit.append_text(str(move_number)+". 0-0\n")
 		CastlingType.Long:
-			text_to_edit.append_text("0-0-0\n")
+			text_to_edit.append_text(str(move_number)+". 0-0-0\n")
 
 static func place_converter(place: Vector2i) -> String:
 	var letters = ["a", "b", "c", "d", "e", "f", "g", "h"]

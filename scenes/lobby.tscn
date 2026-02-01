@@ -78,11 +78,13 @@ size_flags_stretch_ratio = 0.3
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_5gu6x")
+text = "P1:"
 
 [node name="ClientName" type="Label" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/PlayerList"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_5gu6x")
+text = "P2:"
 
 [node name="ReferenceRect2" type="ReferenceRect" parent="PanelContainer/HBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2

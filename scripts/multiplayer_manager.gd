@@ -19,6 +19,8 @@ var player_side = Game.Side.White
 var current_scene = Scenes.MainMenu:
 	set(value):
 		Options.set_misc_state(value)
+		players_count = 1
+		players_count_changed.emit(players_count)
 		current_scene = value
 
 enum Scenes {

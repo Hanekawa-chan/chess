@@ -138,7 +138,7 @@ func _ready():
 	player_name_label.text = " name: "+MultiplayerManager.player_name
 	chess_grid.resized.connect(_set_scale)
 	options_button.pressed.connect(_open_options)
-	var _board = get_transfigure_test_initial_board()
+	var _board = get_initial_board()
 	for cell in chess_grid.get_children():
 		cell.initialize()
 		for piece in _board:
@@ -185,15 +185,14 @@ func new_round(_pawn: Vector2i):
 		BoardLogic.lose(current_side)
 		ended = true
 		last_move.check_mate = History.CheckMate.Mate
-	if pawn == null:
-		if last_move.player_place != 0:
-			add_to_history.rpc(last_move.old, last_move.new, last_move.piece, last_move.second_piece, last_move.converted, last_move.castling_type, last_move.check_mate, last_move.player_place)
-		last_move = null
+	if last_move.player_place != 0:
+		add_to_history.rpc(last_move.old, last_move.new, last_move.piece, last_move.second_piece, last_move.converted, last_move.castling_type, last_move.check_mate, last_move.player_place)
+	last_move = null
 	choosable_pieces.visible = false
 
 @rpc("any_peer","call_local")
 func add_to_history(old, new: Vector2i, piece, second_piece: Pieces, converted: bool, castling_type: History.CastlingType, check_mate: History.CheckMate, player_place: int):
-	History.add_move(old, new, piece, second_piece, converted, castling_type, check_mate, player_place, first_player_history, second_player_history)
+	History.add_move(old, new, piece, second_piece, converted, castling_type, check_mate, player_place, move_number-1, first_player_history, second_player_history)
 
 func get_end_test_initial_board():
 	var _board = [

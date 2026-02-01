@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://cg5lu2u1oku7e"]
+[gd_resource type="Theme" load_steps=28 format=3 uid="uid://cg5lu2u1oku7e"]
 
 [ext_resource type="FontFile" uid="uid://kug4rb3kq1qi" path="res://fonts/Jersey.ttf" id="1_qjhx0"]
 [ext_resource type="Texture2D" uid="uid://dibrvdwiny1kg" path="res://images/button_hover.png" id="1_x127s"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://m4yhnwd624r5" path="res://images/arrow.png" id="8_83bj2"]
 [ext_resource type="Texture2D" uid="uid://j7wquqrrapn3" path="res://images/radio_checked.png" id="9_bjb6u"]
 [ext_resource type="Texture2D" uid="uid://bbkls7gli4c4x" path="res://images/radio_unchecked.png" id="10_s1fdf"]
+[ext_resource type="Texture2D" uid="uid://b6l2fa4xwdshu" path="res://images/scroll_highlight.png" id="11_s1fdf"]
+[ext_resource type="Texture2D" uid="uid://bcb23g2e3mbhl" path="res://images/scroll_pressed.png" id="12_tieq2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ahyh"]
 texture = ExtResource("3_u427p")
@@ -85,6 +87,28 @@ texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 region_rect = Rect2(0, 0, 16, 16)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2e0dr"]
+texture = ExtResource("7_7rtxy")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgisk"]
+texture = ExtResource("11_s1fdf")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5e2ta"]
+texture = ExtResource("12_tieq2")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
 [resource]
 default_base_scale = 1.0
 default_font = ExtResource("1_qjhx0")
@@ -123,3 +147,6 @@ PopupMenu/icons/radio_checked = ExtResource("9_bjb6u")
 PopupMenu/icons/radio_unchecked = ExtResource("10_s1fdf")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_tieq2")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_rrxf3")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_2e0dr")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_fgisk")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_5e2ta")

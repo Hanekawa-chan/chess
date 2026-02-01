@@ -25,6 +25,7 @@ var save_path = "user://options.tres"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_load_options()
+	set_misc_state(MultiplayerManager.Scenes.MainMenu)
 	return_button.pressed.connect(_return_to_main_menu)
 	close_button.pressed.connect(_close_options)
 	apply_button.pressed.connect(_apply_options)
@@ -65,13 +66,7 @@ func _change_name():
 
 func _return_to_main_menu():
 	_close_options()
-	_exit()
-
-func _exit():
-	button_audio_player.play()
-	multiplayer.multiplayer_peer = null
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-	MultiplayerManager.current_scene = MultiplayerManager.Scenes.MainMenu
+	Core.exit()
 
 func _close_options():
 	button_audio_player.play_normal()
