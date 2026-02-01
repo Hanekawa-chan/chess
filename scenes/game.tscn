@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bv8trog1nw6qp"]
+[gd_scene load_steps=40 format=4 uid="uid://bv8trog1nw6qp"]
 
 [ext_resource type="Texture2D" uid="uid://cl55bw3rvlgli" path="res://images/tileset.png" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cw3ao23ynvpem" path="res://scripts/game.gd" id="1_yqjtg"]
@@ -9,6 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://c42jp88t0btft" path="res://resources/black_label.tres" id="5_u5sy4"]
 [ext_resource type="Script" uid="uid://qdecf7plwe6r" path="res://scripts/dead_counters.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://pv4pd0v5ou5x" path="res://scripts/player_info.gd" id="8_gee14"]
+[ext_resource type="Texture2D" uid="uid://go2isv4k783b" path="res://images/plus.png" id="9_dinhu"]
 [ext_resource type="Theme" uid="uid://cg5lu2u1oku7e" path="res://resources/main_theme.tres" id="10_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://s5v8nty5ltjc" path="res://images/options.png" id="10_vtaks"]
 
@@ -1241,6 +1242,15 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer/WhitePawnCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 
@@ -1260,6 +1270,15 @@ theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer3/WhiteKnightCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
 layout_mode = 2
@@ -1282,6 +1301,15 @@ label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer4/WhiteBishopCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 
@@ -1301,6 +1329,15 @@ theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer2/WhiteRookCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer"]
 layout_mode = 2
@@ -1322,6 +1359,15 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer2/VBoxContainer/HBoxContainer6/WhiteQueenCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters"]
 layout_mode = 2
@@ -1351,6 +1397,15 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer5/BlackPawnCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
+
 [node name="HBoxContainer7" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -1371,6 +1426,15 @@ theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer7/BlackKnightCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -1394,6 +1458,15 @@ label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer8/BlackBishopCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
+
 [node name="HBoxContainer9" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 9
@@ -1414,6 +1487,15 @@ theme = ExtResource("4_0tnpc")
 text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer9/BlackRookCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
 
 [node name="HBoxContainer10" type="HBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -1436,6 +1518,15 @@ text = "0"
 label_settings = ExtResource("4_p57ef")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer/HBoxContainer/DeadCounters/MarginContainer/VBoxContainer/HBoxContainer10/BlackQueenCounter"]
+position = Vector2(24, 8)
+emitting = false
+amount = 1
+texture = ExtResource("9_dinhu")
+lifetime = 0.3
+one_shot = true
+gravity = Vector2(0, 320)
 
 [node name="PanelContainer2" type="PanelContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer"]
 layout_mode = 2
@@ -1463,15 +1554,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("10_kvpfn")
-text = "1
-2
-3
-4
-5
-6
-7
-8
-9"
+scroll_following = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Center/VBoxContainer/PanelContainer2/VBoxContainer"]
 layout_mode = 2
@@ -1488,6 +1571,7 @@ autowrap_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+scroll_following = true
 
 [node name="RightSide" type="MarginContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
